@@ -1,0 +1,39 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'css/cards.css' %}"> 
+{% endblock %}
+
+{% block content %}
+    <main class="courses-container">
+        <div class="course-card">
+            <h2>Эффективное планирование</h2>
+            <p>Научитесь расставлять приоритеты и управлять своим временем, чтобы добиваться большего с меньшими усилиями.</p>
+            <button>Подробнее</button>
+        </div>
+
+        <div class="course-card">
+            <h2>Уверенность в себе</h2>
+            <p>Преодолейте страхи и начните уверенно действовать в любой ситуации, развивая внутреннюю силу.</p>
+            <button>Подробнее</button>
+        </div>
+
+        <div class="course-card">
+            <h2>Эмоциональный интеллект</h2>
+            <p>Овладейте навыками управления эмоциями и улучшите отношения с окружающими.</p>
+            <button>Подробнее</button>
+        </div>
+
+        <div class="course-card">
+            <h2>Публичные выступления</h2>
+            <p>Развивайте красноречие и умение воздействовать на аудиторию без страха сцены.</p>
+            <button>Подробнее</button>
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
