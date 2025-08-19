@@ -1,0 +1,50 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block content%}
+    <section style="padding: 40px; text-align: center;">
+        <h2 style="color:#2575fc; font-size: 2rem;">О нашей платформе</h2>
+        <p style="max-width: 800px; margin: 20px auto; font-size: 1.1rem; color:#555;">
+            Nezapadni — это современная онлайн-платформа, где вы найдете курсы, тренинги и мастер-классы 
+            по саморазвитию. Мы помогаем людям раскрывать потенциал, улучшать навыки и достигать целей, 
+            предлагая качественные и практичные материалы от экспертов в своей области.
+        </p>
+    </section>
+
+    <!-- Интерактивные карточки -->
+    <section class="courses">
+        <div class="course-card">
+            <img src="https://via.placeholder.com/280x160.png?text=Личностный+рост" 
+                alt="Личностный рост" style="width:100%; border-radius:8px;">
+            <h3>Личностный рост</h3>
+            <p>Развивайте уверенность в себе, улучшайте навыки общения и формируйте мышление победителя.</p>
+            <button>Узнать больше</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/280x160.png?text=Продуктивность" 
+                alt="Продуктивность" style="width:100%; border-radius:8px;">
+            <h3>Продуктивность</h3>
+            <p>Овладейте инструментами тайм-менеджмента и научитесь эффективно планировать свою жизнь.</p>
+            <button>Узнать больше</button>
+        </div>
+
+        <div class="course-card">
+            <img src="https://via.placeholder.com/280x160.png?text=Здоровье+и+энергия" 
+                alt="Здоровье" style="width:100%; border-radius:8px;">
+            <h3>Здоровье и энергия</h3>
+            <p>Освойте практики, которые помогут вам чувствовать себя энергично и поддерживать здоровье.</p>
+            <button>Узнать больше</button>
+        </div>
+    </section>
+{% endblock%}
+
+
+{% block footer %}
+{% endblock %}
+

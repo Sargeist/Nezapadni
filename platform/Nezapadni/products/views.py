@@ -16,3 +16,9 @@ def products(request):
     'title': 'Produkty Nezapadni'
     }
     return render(request, 'products/products.html', context)
+
+def about(request):
+    context = {
+    'title': 'O Nezapadni'
+    }
+    return render(request, 'products/about.html', context)
