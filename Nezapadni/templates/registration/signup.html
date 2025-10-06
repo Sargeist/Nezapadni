@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signUp.css' %}">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Sign Up</title>
+</head>
+<body>
+    <img src="{% static 'img/Line.png' %}" alt="Background decoration" class="bg">
+    <section>
+        <div class="signUp-box">
+            <form method="post" action="">
+                {% csrf_token %}
+                <h2>Create Account</h2>
+                <p>Join us today and start your journey</p>
+
+                <div class="inputbox">
+                    <input type="text" name="first_name" required>
+                    <label>First Name</label>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" name="last_name" required>
+                    <label>Last Name</label>
+                </div>
+
+                <div class="inputbox">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="inputbox password-box">
+                    <input type="password" name="password1" id="password" required>
+                    <label>Password</label>
+                    <button type="button" class="toggle-password">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+                </div>
+                <p class="password-requirement">Password must be at least 8 characters long.</p>
+
+                <div class="inputbox password-box">
+                    <input type="password" name="password2" id="passwordConfirm" required>
+                    <label>Confirm password</label>
+                    <button type="button" class="toggle-password">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="inputbox">
+                    <select name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+
+                <button type="submit">Sign Up</button>
+
+                <div class="register">
+                    <p>Already have an account? <a href="{% url 'login' %}">Sign in here</a></p>
+                </div>
+            </form>
+
+            <!-- Pop-up ошибок -->
+            {% if form.errors %}
+            <div class="error-popup-overlay" id="errorPopup">
+                <div class="error-popup">
+                    <div class="error-header">
+                        <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+                        <span>Oops! Something went wrong</span>
+                        <button class="close-popup" onclick="closePopup()">×</button>
+                    </div>
+                    <div class="error-body">
+                        {% if form.errors.email %}
+                            {% for error in form.errors.email %}
+                                <p><strong>Email problem:</strong> {{ error }}</p>
+                                <p><strong>Suggestion:</strong> Please use a different email or try logging in.</p>
+                            {% endfor %}
+                        {% else %}
+                            {% if form.errors.password1 %}
+                                {% for error in form.errors.password1 %}
+                                    <p><strong>Password problem:</strong> {{ error }}</p>
+                                    {% if "too short" in error|lower %}
+                                        <p><strong>Suggestion:</strong> Your password must be at least 8 characters long.</p>
+                                    {% elif "too common" in error|lower %}
+                                        <p><strong>Suggestion:</strong> Choose a more complex password with letters, numbers, and symbols.</p>
+                                    {% elif "entirely numeric" in error|lower %}
+                                        <p><strong>Suggestion:</strong> Add letters or special characters to make it stronger.</p>
+                                    {% else %}
+                                        <p><strong>Suggestion:</strong> Please try a stronger password.</p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+
+                            {% if form.errors.password2 %}
+                                {% for error in form.errors.password2 %}
+                                    <p><strong>Confirmation problem:</strong> {{ error }}</p>
+                                    {% if forloop.first %}
+                                        <p><strong>Suggestion:</strong> Make sure both passwords match exactly.</p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script>
+        // Toggle password visibility
+        document.querySelectorAll(".toggle-password").forEach(button => {
+            button.addEventListener("click", () => {
+                const input = button.closest('.password-box').querySelector('input');
+                const icon = button.querySelector("ion-icon");
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.setAttribute("name", "eye-off-outline");
+                } else {
+                    input.type = "password";
+                    icon.setAttribute("name", "eye-outline");
+                }
+            });
+        });
+
+        // Закрытие поп-апа
+        function closePopup() {
+            const popup = document.getElementById('errorPopup');
+            if (popup) popup.style.display = 'none';
+        }
+
+        // Показать поп-ап при загрузке, если есть ошибки
+        window.addEventListener('load', () => {
+            const popup = document.getElementById('errorPopup');
+            if (popup) popup.style.display = 'flex';
+        });
+
+        // Закрытие поп-ап при клике вне окна
+        document.addEventListener('click', function(e) {
+            const popup = document.getElementById('errorPopup');
+            if (popup && e.target === popup) {
+                closePopup();
+            }
+        });
+
+        // Динамическая подсветка требования к паролю
+        const passwordInput = document.getElementById('password');
+        const requirementText = document.querySelector('.password-requirement');
+
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.length >= 8) {
+                requirementText.style.color = 'green';
+            } else {
+                requirementText.style.color = '#6a2ab3';
+            }
+        });
+    </script>
+</body>
+</html>

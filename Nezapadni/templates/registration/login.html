@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/logIn.css' %}">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Log In</title>
+</head>
+<body>
+    <img src="{% static 'img/Line.png' %}" alt="Background decoration" class="bg">
+    <section>
+        <div class="logIn-box">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h2>Log In</h2>
+                <div class="inputbox">
+                    <input type="email" name="username" required>
+                    <label>Email</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" name="password" id="password" required>
+                    <button type="button" class="toggle-password">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <button type="button" class="social-login google-login">
+                    <ion-icon name="logo-google"></ion-icon> Log in with Google
+                </button>
+                <button type="button" class="social-login facebook-login">
+                    <ion-icon name="logo-facebook"></ion-icon> Log in with Facebook
+                </button>
+                <div class="register">
+                    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+                </div>
+            </form>
+            {% if form.errors %}
+                <div class="error-popup-overlay" id="errorPopup">
+                    <div class="error-popup">
+                        <div class="error-header">
+                            <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+                            <span>Oops! Something went wrong</span>
+                            <button class="close-popup" onclick="closePopup()">×</button>
+                        </div>
+                        <div class="error-body">
+                            {% for error in form.non_field_errors %}
+                                <p><strong>Problem:</strong> {{ error|safe }}</p>
+                                <p><strong>Suggestion:</strong> Please check your credentials or try again.</p>
+                            {% endfor %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p><strong>Field:</strong> {{ field.label }}</p>
+                                    <p><strong>Problem:</strong> {{ error|safe }}</p>
+                                    <p><strong>Suggestion:</strong> Make sure to enter a valid {{ field.label|lower }}.</p>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll(".toggle-password").forEach(button => {
+            button.addEventListener("click", () => {
+                const input = button.previousElementSibling;
+                const icon = button.querySelector("ion-icon");
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.setAttribute("name", "eye-off-outline");
+                } else {
+                    input.type = "password";
+                    icon.setAttribute("name", "eye-outline");
+                }
+            });
+        });
+
+        function closePopup() {
+            const popup = document.getElementById('errorPopup');
+            if (popup) popup.style.display = 'none';
+        }
+
+        // Показать поп-ап при загрузке страницы, если есть ошибки
+        window.addEventListener('load', () => {
+            const popup = document.getElementById('errorPopup');
+            if (popup) popup.style.display = 'flex';
+        });
+
+        // Закрыть поп-ап при клике на overlay (вне окна)
+        document.addEventListener('click', function(e) {
+            const popup = document.getElementById('errorPopup');
+            if (popup && e.target === popup) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
