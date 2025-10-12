@@ -211,8 +211,6 @@ body {
     border-radius: 12px; 
     object-fit: cover;
 }
-
-
 .marquee {
     position: relative;
     margin-top: 40px;
