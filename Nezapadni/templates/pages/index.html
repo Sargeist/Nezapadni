@@ -17,7 +17,7 @@
                 <a href="index.html" class="nav-link is-active">Home</a>
                 <a href="story.html" class="nav-link">Story</a>
                 <a href="#" class="nav-link">Contact</a>
-                <a href="#" class="nav-link">Vision</a>
+                <a href="vision.html" class="nav-link">Vision</a>
                 <a href="#" class="nav-link">Courses</a>
             </nav>
             <div class="nav-cta">
@@ -69,7 +69,6 @@
                 <span class="marq-sep">✷</span>
                 <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt=""> Nezapadni</span>
                 <span class="marq-sep">✷</span>
-                <!-- Duplicate for seamless loop -->
                 <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt=""> Nezapadni</span>
                 <span class="marq-sep">✷</span>
                 <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt=""> Nezapadni</span>
@@ -318,7 +317,6 @@
             </a>
         </div>
         
-        <!-- Decorative elements -->
         <div class="community-decorations">
             <div class="decoration-item decoration-1">
                 <img src="../../static/img/smile-face.png" alt="" class="decoration-avatar">
@@ -885,10 +883,7 @@
     </button>
 
     <script>
-        // Scroll to top functionality
         const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.add('show');
@@ -896,8 +891,6 @@
                 scrollToTopBtn.classList.remove('show');
             }
         });
-        
-        // Smooth scroll to top on click
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,

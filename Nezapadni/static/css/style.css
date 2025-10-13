@@ -171,7 +171,6 @@ body {
     background: var(--brand); 
     color: var(--bg-deep); 
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(200, 217, 71, 0.3);
 }
 .btn-pill .arrow { transition: transform .2s ease; }
 .btn-pill:hover .arrow { transform: translateX(3px); }
@@ -186,7 +185,6 @@ body {
     background: var(--brand); 
     color: var(--bg-deep); 
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(200, 217, 71, 0.3);
 }
 
 .hero-art { 
@@ -228,11 +226,11 @@ body {
     display: flex;
     align-items: center;
     gap: 32px;
-    padding: 14px 28px;
+    padding: 14px 0;
     font-weight: 700;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee-scroll 30s linear infinite;
+    animation: marquee-scroll 40s linear infinite;
 }
 
 .marq-item { 
@@ -254,8 +252,8 @@ body {
 }
 
 @keyframes marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 /* About Section */
@@ -389,7 +387,6 @@ body {
 
 .btn-learn-more:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200, 217, 71, 0.3);
 }
 
 .btn-learn-more .arrow {
@@ -827,7 +824,6 @@ body {
 
 .btn-course:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200, 217, 71, 0.3);
 }
 
 .btn-course .arrow {
@@ -860,7 +856,7 @@ body {
 
 /* Community Section */
 .community-section {
-    background: linear-gradient(135deg, #5a3a9e 0%, #6b4ab5 50%, #7a5ac5 100%);
+    background: rgba(78, 47, 117, 1);
     padding: 100px 0;
     position: relative;
     overflow: hidden;
@@ -923,22 +919,19 @@ body {
 .btn-community {
     background: var(--brand);
     color: var(--bg-deep);
-    padding: 16px 40px;
+    padding: 14px 18px;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 16px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(200, 217, 71, 0.4);
 }
 
 .btn-community:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(200, 217, 71, 0.6);
-    background: #deff6d;
+    transform: translateY(-2px);
 }
 
 /* Community Decorations */
@@ -1113,7 +1106,6 @@ body {
 
 .btn-join:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(208, 242, 97, 0.3);
 }
 
 .btn-join .arrow {
@@ -1699,7 +1691,6 @@ body {
 
 .btn-send-message:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200, 217, 71, 0.3);
 }
 
 .security-disclaimer {
