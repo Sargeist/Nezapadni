@@ -2,7 +2,6 @@ body {
     background: #fff !important;
 }
 
-/* Header and Hero Background */
 .site-header,
 .hero-story {
     background:
@@ -11,7 +10,6 @@ body {
         var(--bg-deep);
 }
 
-/* Hero Section */
 .hero-story {
     padding: 80px 0 100px;
     position: relative;
