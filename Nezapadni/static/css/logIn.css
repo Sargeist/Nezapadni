@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Bitter", serif;
 }
 
 body {
@@ -226,7 +226,7 @@ button[type="submit"]:hover {
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
     padding: 25px 20px;
     animation: fadeInScale 0.3s ease;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Bitter", serif;
 }
 
 .error-header {
