@@ -226,9 +226,10 @@ img, .logo-img, .brand-link {
     border-radius: 12px; 
     object-fit: cover;
 }
+
 .marquee {
     position: relative;
-    margin-top: 40px;
+    margin-top: 0px;
     background: var(--accent);
     transform: rotate(-3deg);
     width: 100vw;
@@ -241,30 +242,24 @@ img, .logo-img, .brand-link {
     box-shadow: 0 8px 24px #00000033;
     z-index: 3;
     contain: layout style paint;
-}
-
-.marquee-container {
-    display: flex;
-    width: 200%;
-    animation: marquee-scroll 20s linear infinite;
-    will-change: transform;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    contain: layout style paint;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .marquee-track {
     display: flex;
-    align-items: center;
     gap: 24px;
     padding: 14px 0;
     font-weight: 700;
     white-space: nowrap;
-    width: 50%;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    will-change: auto;
-    transform: translateZ(0);
+    will-change: transform;
+    animation: marquee-scroll linear infinite;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .marq-item { 
@@ -273,19 +268,20 @@ img, .logo-img, .brand-link {
     gap: 8px;
     padding: 0 12px;
     flex-shrink: 0;
-    white-space: nowrap;
-    box-sizing: border-box;
-    will-change: auto;
-    transform: translateZ(0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .marq-sep { 
     opacity: .95; 
     font-weight: 800;
     flex-shrink: 0;
-    box-sizing: border-box;
-    will-change: auto;
-    transform: translateZ(0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .marq-logo { 
@@ -293,35 +289,22 @@ img, .logo-img, .brand-link {
     height: 22px; 
     vertical-align: middle;
     flex-shrink: 0;
-    box-sizing: border-box;
-    will-change: auto;
-    transform: translateZ(0);
     image-rendering: -webkit-optimize-contrast;
 }
 
 @keyframes marquee-scroll {
     0% {
-        transform: translate3d(0%, 0, 0);
+        transform: translateX(0);
     }
     100% {
-        transform: translate3d(-50%, 0, 0);
+        transform: translateX(-50%);
     }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
-    .marquee-container {
+    .marquee-track {
         animation: none;
     }
-}
-        
-.marquee-container {
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
-    contain: layout style paint;
-    backface-visibility: hidden;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
 }
 
 /* About Section */

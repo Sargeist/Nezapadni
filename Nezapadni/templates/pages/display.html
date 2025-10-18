@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Nezapadni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/display.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="brand">
+                <a href="index.html" class="brand-link">
+                    <img class="logo-img" src="../../static/img/nezapadni_single_green.png" alt="Nezapadni logo">
+                    <span class="logo-text">Nezapadni</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="story.html" class="nav-link">Story</a>
+                <a href="#" class="nav-link">Contact</a>
+                <a href="vision.html" class="nav-link">Vision</a>
+                <a href="corses.html" class="nav-link">Courses</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-small">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="course-detail-main">
+        <div class="container">
+            <div class="course-detail-content">
+                <div class="course-detail-left">
+                    <div class="course-detail-image">
+                        <img src="../../static/img/Gemini_Generated_Image_f32016f32016f320.png" alt="Course Image" class="course-detail-img">
+                    </div>
+                    
+                    <div class="course-detail-meta">
+                        <span class="course-detail-category">Development</span>
+                        <div class="course-detail-rating">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>(4.8 Reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="course-detail-title">Start Making Progress in your attitude...</h1>
+                    
+                    <div class="course-detail-author-info">
+                        <div class="author-avatar">
+                            <img src="../../static/img/portrait-white-man-isolated 4.png" alt="Author" class="author-img">
+                        </div>
+                        <div class="author-details">
+                            <span class="author-name">By David Millar</span>
+                            <span class="course-date">24/07/2023</span>
+                            <span class="course-students">2,250 Students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="curriculum">Curriculum</button>
+                        <button class="tab-btn" data-tab="instructors">Instructors</button>
+                        <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="overview">
+                            <div class="course-description-card">
+                                <h3>Course Description</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                
+                                <h3>What you'll learn in this course?</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <ul class="course-features">
+                                    <li>Work with color & Gradients & Grids</li>
+                                    <li>All the useful shortcuts</li>
+                                    <li>Be able to create Flyers, Brochures, Advertisements</li>
+                                    <li>How to work with Images & Text</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="curriculum">
+                            <div class="course-description-card">
+                                <h3>Course Curriculum</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                                
+                                <div class="curriculum-section">
+                                    <div class="curriculum-item expanded">
+                                        <div class="curriculum-header">
+                                            <span class="curriculum-title">Introduction</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="curriculum-content">
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Course Installation</span>
+                                                <span class="lesson-duration">07:48</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Getting Started with Basics</span>
+                                                <span class="lesson-duration">12:30</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Understanding the Interface</span>
+                                                <span class="lesson-duration">15:20</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="curriculum-item">
+                                        <div class="curriculum-header">
+                                            <span class="curriculum-title">Course Fundamentals</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="curriculum-content">
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Core Concepts and Theory</span>
+                                                <span class="lesson-duration">18:45</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Practical Applications</span>
+                                                <span class="lesson-duration">22:10</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Advanced Techniques</span>
+                                                <span class="lesson-duration">25:30</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="curriculum-item">
+                                        <div class="curriculum-header">
+                                            <span class="curriculum-title">15 Things To Know About Education?</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="curriculum-content">
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Educational Psychology Basics</span>
+                                                <span class="lesson-duration">20:15</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Learning Methodologies</span>
+                                                <span class="lesson-duration">16:40</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="lesson-item locked">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Assessment Strategies</span>
+                                                <span class="lesson-duration">14:25</span>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="instructors">
+                            <div class="instructor-main-card">
+                                <div class="instructor-header">
+                                    <div class="instructor-avatar-large">
+                                        <img src="../../static/img/expressive-pretty-woman-posing 2.png" alt="Sarah Johnson" class="instructor-img-large">
+                                    </div>
+                                    <div class="instructor-info-large">
+                                        <h3>Lorem Ipsum</h3>
+                                        <p class="instructor-title">Senior UX Designer & Course Instructor</p>
+                                        <div class="instructor-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-number">8+</span>
+                                                <span class="stat-label">Years Experience</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-number">50+</span>
+                                                <span class="stat-label">Projects Completed</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-number">4.9</span>
+                                                <span class="stat-label">Rating</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="instructor-bio-large">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    
+                                    <div class="instructor-expertise">
+                                        <h4>Areas of Expertise:</h4>
+                                        <div class="expertise-tags">
+                                            <span class="expertise-tag">Lorem Ipsum</span>
+                                            <span class="expertise-tag">Dolor Sit</span>
+                                            <span class="expertise-tag">Amet Consectetur</span>
+                                            <span class="expertise-tag">Adipiscing Elit</span>
+                                            <span class="expertise-tag">Sed Do</span>
+                                            <span class="expertise-tag">Eiusmod</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="instructor-social">
+                                        <h4>Connect with Lorem:</h4>
+                                        <div class="social-links">
+                                            <a href="#" class="social-link">
+                                                <img src="../../static/img/icons8-facebook-32.png" alt="Facebook">
+                                            </a>
+                                            <a href="#" class="social-link">
+                                                <img src="../../static/img/icons8-x-32.png" alt="Twitter">
+                                            </a>
+                                            <a href="#" class="social-link">
+                                                <img src="../../static/img/icons8-instagram-32.png" alt="Instagram">
+                                            </a>
+                                            <a href="#" class="social-link">
+                                                <img src="../../static/img/icons8-linkedin-2-32.png" alt="LinkedIn">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="reviews">
+                            <div class="course-description-card">
+                                <h3>Reviews</h3>
+                                <div class="reviews-summary">
+                                    <div class="rating-overview">
+                                        <div class="rating-score">4.8</div>
+                                        <div class="rating-stars">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                        </div>
+                                        <div class="rating-count">12 Ratings</div>
+                                    </div>
+                                    <div class="rating-breakdown">
+                                        <div class="rating-bar">
+                                            <span>5</span>
+                                            <div class="stars">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                            <span>1</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>4</span>
+                                            <div class="stars">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                            <span>0</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>3</span>
+                                            <div class="stars">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                            <span>0</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>2</span>
+                                            <div class="stars">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                            <span>0</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>1</span>
+                                            <div class="stars">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-item">
+                                    <div class="review-avatar">
+                                        <img src="../../static/img/portrait-white-man-isolated 4.png" alt="Reviewer" class="reviewer-img">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-header">
+                                            <span class="reviewer-name">Jura Hujaor</span>
+                                            <span class="review-date">2 Days ago</span>
+                                        </div>
+                                        <h4 class="review-title">The best LMS Design System</h4>
+                                        <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <div class="review-rating">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-item">
+                                    <div class="review-avatar">
+                                        <img src="../../static/img/handsome-young-man-with-new-stylish-haircut 2.png" alt="Reviewer" class="reviewer-img">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-header">
+                                            <span class="reviewer-name">Michael Chen</span>
+                                            <span class="review-date">1 Week ago</span>
+                                        </div>
+                                        <h4 class="review-title">Excellent Course Content</h4>
+                                        <p class="review-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                                        <div class="review-rating">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-item">
+                                    <div class="review-avatar">
+                                        <img src="../../static/img/expressive-pretty-woman-posing 2.png" alt="Reviewer" class="reviewer-img">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-header">
+                                            <span class="reviewer-name">Emma Rodriguez</span>
+                                            <span class="review-date">2 Weeks ago</span>
+                                        </div>
+                                        <h4 class="review-title">Great Learning Experience</h4>
+                                        <p class="review-text">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                        <div class="review-rating">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="write-review">
+                                    <div class="review-form">
+                                        <h4 class="review-form-title">Write a Review</h4>
+                                        <div class="review-form-content">
+                                            <div class="review-rating-input">
+                                                <label class="rating-label">Your Rating:</label>
+                                                <div class="star-rating">
+                                                    <input type="radio" id="star1" name="rating" value="1">
+                                                    <label for="star1">★</label>
+                                                    <input type="radio" id="star2" name="rating" value="2">
+                                                    <label for="star2">★</label>
+                                                    <input type="radio" id="star3" name="rating" value="3">
+                                                    <label for="star3">★</label>
+                                                    <input type="radio" id="star4" name="rating" value="4">
+                                                    <label for="star4">★</label>
+                                                    <input type="radio" id="star5" name="rating" value="5">
+                                                    <label for="star5">★</label>
+                                                </div>
+                                            </div>
+                                            <div class="review-title-input">
+                                                <label for="review-title" class="form-label">Review Title</label>
+                                                <input type="text" id="review-title" class="form-input" placeholder="Enter a title for your review">
+                                            </div>
+                                            <div class="review-text-input">
+                                                <label for="review-text" class="form-label">Your Review</label>
+                                                <textarea id="review-text" class="form-textarea" placeholder="Share your experience with this course..." rows="4"></textarea>
+                                            </div>
+                                            <button class="submit-review-btn">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                Submit Review
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-detail-right">
+                    <div class="pricing-card">
+                        <h2 class="pricing-title">Course</h2>
+                        <h3 class="pricing-features-title">Features</h3>
+                        <ul class="pricing-features">
+                            <li>Increased Usage Limits</li>
+                            <li>Priority Support</li>
+                            <li>Multi-User Support</li>
+                            <li>Increased Storage</li>
+                        </ul>
+                        <div class="pricing-price">$15</div>
+                        <button class="pricing-btn">Buy Course →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img class="footer-logo-img" src="../../static/img/nezapadni_single_green.png" alt="Nezapadni logo">
+                <span class="footer-logo-text">Nezapadni</span>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Link</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="story.html" class="footer-link">Story</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Information</h3>
+                    <ul class="footer-contacts">
+                        <li class="footer-contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>+123 456 7890</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>sales@nezapadni.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>123 Nezapadni, Luxe City, 45678</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Term of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-copyright">© 2026 Fiverr. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (scrollToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.add('show');
+                    } else {
+                        scrollToTopBtn.classList.remove('show');
+                    }
+                });
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetTab = btn.getAttribute('data-tab');
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanels.forEach(p => p.classList.remove('active'));                    
+                    btn.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            const curriculumHeaders = document.querySelectorAll('.curriculum-header');
+            curriculumHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const curriculumItem = header.parentElement;
+                    const isExpanded = curriculumItem.classList.contains('expanded');
+                    
+                    document.querySelectorAll('.curriculum-item').forEach(item => {
+                        item.classList.remove('expanded');
+                    });
+                    
+                    if (!isExpanded) {
+                        curriculumItem.classList.add('expanded');
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const starInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+            const starLabels = document.querySelectorAll('.star-rating label');
+
+            starInputs.forEach((input, index) => {
+                input.addEventListener('change', function() {
+                    starLabels.forEach(label => label.classList.remove('active'));
+                    
+                    for (let i = 0; i <= index; i++) {
+                        starLabels[i].classList.add('active');
+                    }
+                });
+            });
+
+            starLabels.forEach((label, index) => {
+                label.addEventListener('mouseenter', function() {
+                    starLabels.forEach(label => label.classList.remove('active'));
+                    
+                    for (let i = 0; i <= index; i++) {
+                        starLabels[i].classList.add('active');
+                    }
+                });
+            });
+
+            document.querySelector('.star-rating').addEventListener('mouseleave', function() {
+                const checkedInput = document.querySelector('.star-rating input[type="radio"]:checked');
+                if (checkedInput) {
+                    const checkedIndex = Array.from(starInputs).indexOf(checkedInput);
+                    starLabels.forEach(label => label.classList.remove('active'));
+                    for (let i = 0; i <= checkedIndex; i++) {
+                        starLabels[i].classList.add('active');
+                    }
+                } else {
+                    starLabels.forEach(label => label.classList.remove('active'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
