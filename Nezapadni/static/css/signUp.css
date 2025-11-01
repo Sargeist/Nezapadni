@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Bitter", serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
@@ -67,6 +67,7 @@ form {
     width: 100%;
     padding: 14px;
     font-size: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #222;
     background: #f8f8f8;
     border: 1px solid #ddd;
@@ -138,6 +139,7 @@ form {
 
 /* Submit button */
 button[type="submit"] {
+    font-family: "Plus Jakarta Sans", sans-serif;
     background: #cfff4d;
     color: #000;
     border: none;
@@ -194,7 +196,7 @@ button[type="submit"]:hover {
     box-shadow: 0 25px 60px rgba(0,0,0,0.3);
     padding: 25px 20px;
     animation: popIn 0.5s ease-out forwards, shake 0.3s ease-in-out 0.5s;
-    font-family: "Bitter", serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     transform-origin: center;
     max-height: 80vh;
     overflow-y: auto;

@@ -1,6 +1,7 @@
 
 body {
     background: #fff !important;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .site-footer::before {
@@ -10,8 +11,8 @@ body {
 .site-header,
 .hero-vision {
     background:
-        radial-gradient(1200px 800px at -15% -30%, #5a35a9 0%, transparent 60%),
-        radial-gradient(1200px 800px at 120% 30%, #7a4bdb 0%, transparent 55%),
+        radial-gradient(1200px 800px at -15% -30%, #4E2F75 0%, transparent 60%),
+        radial-gradient(1200px 800px at 120% 30%, #4E2F75 0%, transparent 55%),
         var(--bg-deep);
 }
 .hero-background-skew {
@@ -20,8 +21,8 @@ body {
     z-index: 0; 
     transform: skewY(-3deg);
     background:
-        radial-gradient(1200px 800px at -15% -30%, #5a35a9 0%, transparent 60%),
-        radial-gradient(1200px 800px at 120% 30%, #7a4bdb 0%, transparent 55%),
+        radial-gradient(1200px 800px at -15% -30%, #4E2F75 0%, transparent 60%),
+        radial-gradient(1200px 800px at 120% 30%, #4E2F75 0%, transparent 55%),
         var(--bg-deep);
 }
 
@@ -36,8 +37,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(800px 400px at 20% 10%, #5a35a922 0%, transparent 60%),
-        radial-gradient(600px 600px at 90% 30%, #7e4cff22 0%, transparent 65%);
+        radial-gradient(800px 400px at 20% 10%, rgba(78, 47, 117, 0.13) 0%, transparent 60%),
+        radial-gradient(600px 600px at 90% 30%, rgba(78, 47, 117, 0.13) 0%, transparent 65%);
     pointer-events: none;
     z-index: 1;
 }
@@ -47,7 +48,7 @@ body {
     position: absolute;
     inset: 0;
     background-image: 
-        url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400' fill='none' stroke='rgba(200,217,71,0.15)' stroke-width='3'/%3E%3Cpath d='M0,300 Q250,150 500,300 T1000,300 T1200,300' fill='none' stroke='rgba(178,48,198,0.1)' stroke-width='2'/%3E%3Cpath d='M100,500 Q400,350 700,500 T1200,500' fill='none' stroke='rgba(200,217,71,0.08)' stroke-width='2'/%3E%3Ccircle cx='150' cy='150' r='4' fill='rgba(200,217,71,0.3)'/%3E%3Ccircle cx='950' cy='250' r='3' fill='rgba(178,48,198,0.25)'/%3E%3Ccircle cx='750' cy='450' r='5' fill='rgba(200,217,71,0.2)'/%3E%3Ccircle cx='300' cy='600' r='3' fill='rgba(178,48,198,0.15)'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400' fill='none' stroke='rgba(218, 246, 83,0.15)' stroke-width='3'/%3E%3Cpath d='M0,300 Q250,150 500,300 T1000,300 T1200,300' fill='none' stroke='rgba(178,48,198,0.1)' stroke-width='2'/%3E%3Cpath d='M100,500 Q400,350 700,500 T1200,500' fill='none' stroke='rgba(218, 246, 83,0.08)' stroke-width='2'/%3E%3Ccircle cx='150' cy='150' r='4' fill='rgba(218, 246, 83,0.3)'/%3E%3Ccircle cx='950' cy='250' r='3' fill='rgba(178,48,198,0.25)'/%3E%3Ccircle cx='750' cy='450' r='5' fill='rgba(218, 246, 83,0.2)'/%3E%3Ccircle cx='300' cy='600' r='3' fill='rgba(178,48,198,0.15)'/%3E%3C/svg%3E");
     background-size: cover;
     background-position: center;
     pointer-events: none;
@@ -65,8 +66,8 @@ body {
 
 .hero-vision-title {
     margin: 0 0 24px;
-    font-size: clamp(48px, 7vw, 80px);
-    line-height: 1.1;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--text);
 }
@@ -74,14 +75,14 @@ body {
 .hero-vision-description {
     margin: 0 auto 40px;
     color: var(--muted);
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: clamp(28px, 3.5vw, 38px);
     max-width: 700px;
 }
 
 /* Vision Timeline Section */
 .vision-timeline-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #fff;
     position: relative;
     margin-top: 0;
@@ -107,8 +108,9 @@ body {
     margin: 0 auto;
     position: relative;
     padding: 0 20px;
-    height: 1424px;
+    height: 1600px;
     z-index: 10;
+    margin-bottom: 80px;
 }
 
 /* Central Timeline */
@@ -121,8 +123,8 @@ body {
     transform: translateX(-50%);
     background: linear-gradient(
         to bottom,
-        #10B981 0%,
-        #8B5CF6 30%,
+        #DAF653 0%,
+        #4E2F75 30%,
         #EC4899 60%,
         #EF4444 100%
     );
@@ -145,7 +147,7 @@ body {
 }
 
 .timeline-node.active {
-    background: #10B981;
+    background: #DAF653;
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
@@ -172,16 +174,16 @@ body {
 .hub-card {
     position: absolute;
     background: #ffffff;
-    border-radius: 12px;
-    padding: 24px;
+    border-radius: 16px;
+    padding: 32px 28px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    max-width: 420px;
+    max-width: 480px;
     z-index: 5;
     transition: all 0.4s ease;
 }
 
 .hub-card.active {
-    background: #4A2A7F;
+    background: #4E2F75;
     color: #ffffff;
     filter: none;
     opacity: 1;
@@ -254,15 +256,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .hub-number {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 500;
+    gap: 8px;
+    font-size: clamp(15px, 1.7vw, 17px);
+    font-weight: 600;
     color: #6B7280;
 }
 
@@ -271,16 +273,16 @@ body {
 }
 
 .hub-tag {
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 16px;
-    font-size: 11px;
-    font-weight: 600;
+    font-size: clamp(13px, 1.5vw, 15px);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .hub-tag.foundation {
-    background: #D9F99D;
+    background: #DAF653;
     color: #1F2937;
 }
 
@@ -296,7 +298,7 @@ body {
 
 .hub-tag.leadership {
     background: #F3E5F5;
-    color: #7C3AED;
+    color: #4E2F75;
 }
 
 .hub-tag.global {
@@ -306,18 +308,18 @@ body {
 
 /* Hub Content */
 .hub-title {
-    font-size: 24px;
+    font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 800;
     color: #1F2937;
-    margin: 0 0 12px;
-    line-height: 1.2;
+    margin: 0 0 16px;
+    line-height: 1.4;
 }
 
 .hub-description {
-    font-size: 15px;
+    font-size: clamp(16px, 1.8vw, 18px);
     color: #6B7280;
-    line-height: 1.5;
-    margin: 0 0 20px;
+    line-height: clamp(24px, 3vw, 28px);
+    margin: 0 0 24px;
 }
 
 /* Hub Footer */
@@ -328,25 +330,26 @@ body {
 }
 
 .hub-status {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: clamp(15px, 1.7vw, 17px);
+    font-weight: 600;
     color: #6B7280;
 }
 
 .hub-button {
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: 16px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     transition: all 0.3s ease;
 }
 
 .hub-button.available {
-    background: #D9F99D;
+    background: #DAF653;
     color: #1F2937;
 }
 
@@ -365,14 +368,15 @@ body {
 .vision-progress {
     background: #ffffff;
     border-radius: 16px;
-    padding: 20px 28px;
+    padding: 32px 40px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    margin: 40px auto 60px;
-    max-width: 500px;
+    margin: 80px auto 60px;
+    max-width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 15;
 }
 
 .vision-progress::before {
@@ -400,7 +404,7 @@ body {
 }
 
 .progress-dot.current {
-    background: #10B981;
+    background: #DAF653;
 }
 
 .progress-dot.remaining {
@@ -414,13 +418,13 @@ body {
 }
 
 .progress-label {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 18px);
+    font-weight: 700;
     color: #1F2937;
 }
 
 .progress-detail {
-    font-size: 12px;
+    font-size: clamp(14px, 1.6vw, 16px);
     color: #6B7280;
 }
 
@@ -439,24 +443,25 @@ body {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 40px 28px;
+    padding: 60px 40px;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .vision-cta-title {
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: clamp(38px, 5vw, 76px);
+    letter-spacing: -2px;
     font-weight: 800;
     color: #ffffff;
     margin: 0 0 12px;
-    line-height: 1.2;
 }
 
 .vision-cta-description {
-    font-size: 16px;
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: clamp(28px, 3.5vw, 38px);
     color: rgba(255, 255, 255, 0.9);
     margin: 0 0 32px;
-    line-height: 1.5;
 }
 
 .vision-cta-buttons {
@@ -467,14 +472,15 @@ body {
 }
 
 .cta-button {
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 14px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     transition: all 0.3s ease;
 }
 
@@ -484,7 +490,7 @@ body {
 }
 
 .cta-button.primary:hover {
-    background: #deff6d;
+    background: #DAF653;
     transform: translateY(-2px);
 }
 
