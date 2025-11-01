@@ -1,12 +1,13 @@
 body {
     background: #fff !important;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .site-header,
 .hero-story {
     background:
-        radial-gradient(1200px 800px at -15% -30%, #5a35a9 0%, transparent 60%),
-        radial-gradient(1200px 800px at 120% 30%, #7a4bdb 0%, transparent 55%),
+        radial-gradient(1200px 800px at -15% -30%, #4E2F75 0%, transparent 60%),
+        radial-gradient(1200px 800px at 120% 30%, #4E2F75 0%, transparent 55%),
         var(--bg-deep);
 }
 
@@ -21,8 +22,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(800px 400px at 20% 10%, #5a35a922 0%, transparent 60%),
-        radial-gradient(600px 600px at 90% 30%, #7e4cff22 0%, transparent 65%);
+        radial-gradient(800px 400px at 20% 10%, rgba(78, 47, 117, 0.13) 0%, transparent 60%),
+        radial-gradient(600px 600px at 90% 30%, rgba(78, 47, 117, 0.13) 0%, transparent 65%);
     pointer-events: none;
     z-index: 1;
 }
@@ -32,7 +33,7 @@ body {
     position: absolute;
     inset: 0;
     background-image: 
-        url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400' fill='none' stroke='rgba(200,217,71,0.15)' stroke-width='3'/%3E%3Cpath d='M0,300 Q250,150 500,300 T1000,300 T1200,300' fill='none' stroke='rgba(178,48,198,0.1)' stroke-width='2'/%3E%3Cpath d='M100,500 Q400,350 700,500 T1200,500' fill='none' stroke='rgba(200,217,71,0.08)' stroke-width='2'/%3E%3Ccircle cx='150' cy='150' r='4' fill='rgba(200,217,71,0.3)'/%3E%3Ccircle cx='950' cy='250' r='3' fill='rgba(178,48,198,0.25)'/%3E%3Ccircle cx='750' cy='450' r='5' fill='rgba(200,217,71,0.2)'/%3E%3Ccircle cx='300' cy='600' r='3' fill='rgba(178,48,198,0.15)'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,400 Q300,200 600,400 T1200,400' fill='none' stroke='rgba(218, 246, 83,0.15)' stroke-width='3'/%3E%3Cpath d='M0,300 Q250,150 500,300 T1000,300 T1200,300' fill='none' stroke='rgba(178,48,198,0.1)' stroke-width='2'/%3E%3Cpath d='M100,500 Q400,350 700,500 T1200,500' fill='none' stroke='rgba(218, 246, 83,0.08)' stroke-width='2'/%3E%3Ccircle cx='150' cy='150' r='4' fill='rgba(218, 246, 83,0.3)'/%3E%3Ccircle cx='950' cy='250' r='3' fill='rgba(178,48,198,0.25)'/%3E%3Ccircle cx='750' cy='450' r='5' fill='rgba(218, 246, 83,0.2)'/%3E%3Ccircle cx='300' cy='600' r='3' fill='rgba(178,48,198,0.15)'/%3E%3C/svg%3E");
     background-size: cover;
     background-position: center;
     pointer-events: none;
@@ -50,8 +51,8 @@ body {
 
 .hero-story-title {
     margin: 0 0 24px;
-    font-size: clamp(48px, 7vw, 80px);
-    line-height: 1.1;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--text);
 }
@@ -59,8 +60,8 @@ body {
 .hero-story-description {
     margin: 0 auto 40px;
     color: var(--muted);
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: clamp(28px, 3.5vw, 38px);
     max-width: 700px;
 }
 
@@ -70,7 +71,7 @@ body {
 }
 
 .story-timeline {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #fff;
     position: relative;
     margin-top: 0;
@@ -117,7 +118,7 @@ body {
     top: 0;
     width: 50px;
     height: 50px;
-    background: #8b5cf6;
+    background: #4E2F75;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -161,7 +162,9 @@ body {
 }
 
 .story-title {
-    font-size: 36px;
+    font-size: clamp(28px, 4.5vw, 56px);
+    line-height: clamp(34px, 4.5vw, 68px);
+    letter-spacing: -2px;
     font-weight: 700;
     color: #000;
     margin: 0 0 20px;
@@ -180,8 +183,8 @@ body {
 }
 
 .story-description {
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: clamp(24px, 3vw, 28px);
     color: #333;
     margin: 30px 0 0;
 }
@@ -203,7 +206,9 @@ body {
 }
 
 .team-section-title {
-    font-size: 36px;
+    font-size: clamp(28px, 4.5vw, 56px);
+    line-height: clamp(34px, 4.5vw, 68px);
+    letter-spacing: -2px;
     font-weight: 700;
     color: #fff;
     text-align: center;
@@ -354,7 +359,7 @@ body {
     }
     
     .story-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .story-block-reverse .story-content .story-text {
@@ -372,7 +377,7 @@ body {
     }
     
     .team-section-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .team-section-subtitle {

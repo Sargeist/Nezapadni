@@ -1,6 +1,6 @@
 body {
     background: #f8f9fa !important;
-    font-family: 'Bitter', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .site-footer::before {
@@ -9,8 +9,8 @@ body {
 
 .site-header {
     background:
-        radial-gradient(1200px 800px at -15% -30%, #5a35a9 0%, transparent 60%),
-        radial-gradient(1200px 800px at 120% 30%, #7a4bdb 0%, transparent 55%),
+        radial-gradient(1200px 800px at -15% -30%, #4E2F75 0%, transparent 60%),
+        radial-gradient(1200px 800px at 120% 30%, #4E2F75 0%, transparent 55%),
         var(--bg-deep);
 }
 
@@ -80,11 +80,12 @@ body {
 }
 
 .course-detail-title {
-    font-size: 32px;
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: clamp(38px, 5vw, 76px);
+    letter-spacing: -2px;
     font-weight: 700;
     color: #1f2937;
     margin: 0 0 20px;
-    line-height: 1.2;
 }
 
 .course-detail-author-info {
@@ -151,7 +152,7 @@ body {
 }
 
 .tab-btn.active {
-    background: #8b5cf6;
+    background: #4E2F75;
     color: white;
 }
 
@@ -236,7 +237,7 @@ body {
 }
 
 .curriculum-item.expanded {
-    border-color: #8b5cf6;
+    border-color: #4E2F75;
 }
 
 .curriculum-header {
@@ -251,7 +252,7 @@ body {
 }
 
 .curriculum-item.expanded .curriculum-header {
-    background: #8b5cf6;
+    background: #4E2F75;
     color: white;
     border-bottom: none;
 }
@@ -292,7 +293,7 @@ body {
 }
 
 .lesson-item svg:first-child {
-    color: #8b5cf6;
+    color: #4E2F75;
     width: 16px;
     height: 16px;
 }
@@ -304,7 +305,7 @@ body {
 }
 
 .lesson-item svg:last-child {
-    color: #8b5cf6;
+    color: #4E2F75;
     width: 16px;
     height: 16px;
 }
@@ -393,7 +394,7 @@ body {
 }
 
 .social-link:hover {
-    background: #8b5cf6;
+    background: #4E2F75;
     color: white;
 }
 
@@ -643,7 +644,7 @@ body {
 
 .form-input:focus,
 .form-textarea:focus {
-    border-color: #8b5cf6;
+    border-color: #4E2F75;
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
@@ -682,7 +683,7 @@ body {
 }
 
 .pricing-card {
-    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    background: linear-gradient(135deg, #4E2F75 0%, #ec4899 100%);
     border-radius: 16px;
     padding: 30px;
     color: white;
@@ -752,7 +753,7 @@ body {
 .pricing-btn {
     width: 100%;
     background: white;
-    color: #8b5cf6;
+    color: #4E2F75;
     border: none;
     padding: 16px 24px;
     border-radius: 12px;
@@ -871,7 +872,7 @@ body {
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #8b5cf6;
+    border: 4px solid #4E2F75;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
@@ -915,7 +916,7 @@ body {
 .stat-number {
     font-size: 24px;
     font-weight: 700;
-    color: #8b5cf6;
+    color: #4E2F75;
     line-height: 1;
 }
 
@@ -955,7 +956,7 @@ body {
 }
 
 .expertise-tag {
-    background: #8b5cf6;
+    background: #4E2F75;
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -965,7 +966,7 @@ body {
 }
 
 .expertise-tag:hover {
-    background: #7c3aed;
+    background: #4E2F75;
     transform: translateY(-1px);
 }
 
