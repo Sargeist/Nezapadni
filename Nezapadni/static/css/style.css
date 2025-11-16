@@ -2238,3 +2238,61 @@ img, .logo-img, .brand-link {
         height: 20px;
     }
 }
+
+/* ------------------------------- */
+/* 🔔 FLASH MESSAGES (SUCCESS, ERROR) */
+/* ------------------------------- */
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flash-message {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    background: #d1fae5; /* success bg */
+    color: #065f46;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* скрытие */
+.flash-message.flash-hide {
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+}
+
+/* error */
+.flash-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* info */
+.flash-message.info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* warning */
+.flash-message.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+

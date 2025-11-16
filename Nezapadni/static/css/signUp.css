@@ -1,249 +1,82 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Bitter", serif;
-}
-
 body {
-    background: rgba(78, 47, 117, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
+  background: linear-gradient(135deg, #f3f6ff, #eef3fb);
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin: 0;
 }
 
-/* Background decoration */
-.bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.4;
+.signup-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-/* Form box */
-.signUp-box {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    border-radius: 14px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-    padding: 40px 35px;
-    text-align: center;
+.signup-card {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
 }
 
-.signUp-box h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #181818;
+.signup-card h2 {
+  color: #2c2c2c;
+  margin-bottom: 25px;
 }
 
-.signUp-box p {
-    font-size: 14px;
-    color: #707070;
-    margin-bottom: 30px;
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.signup-form label {
+  font-weight: 600;
+  color: #333;
 }
 
-.inputbox {
-    position: relative;
-    width: 100%;
+.signup-form input, 
+.signup-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.inputbox input,
-.inputbox select {
-    width: 100%;
-    padding: 14px;
-    font-size: 15px;
-    color: #222;
-    background: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.25s ease;
+.signup-form input:focus {
+  outline: none;
+  border-color: #00a67e;
+  box-shadow: 0 0 4px rgba(0, 166, 126, 0.3);
 }
 
-.inputbox select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23777' d='M6 9l-4-4h8z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 30px;
+button {
+  background-color: #00a67e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.inputbox input:focus,
-.inputbox select:focus {
-    border-color: #6a2ab3;
-    background: #fff;
-    box-shadow: 0 0 0 3px rgba(106, 42, 179, 0.15);
+button:hover {
+  background-color: #008f6b;
 }
 
-.inputbox label {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    color: #777;
-    font-size: 14px;
-    pointer-events: none;
-    transition: all 0.2s ease;
-}
-
-.inputbox input:focus ~ label,
-.inputbox select:focus ~ label,
-.inputbox input:not(:placeholder-shown) ~ label,
-.inputbox select:not(:placeholder-shown) ~ label {
-    top: -8px;
-    left: 12px;
-    font-size: 12px;
-    background: white;
-    padding: 0 6px;
-    color: #6a2ab3;
-}
-
-/* Toggle eye icon */
-.password-box {
-    position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 14px;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* Password requirement text */
-.password-requirement {
-    font-size: 12px;
-    color: #6a2ab3;
-    margin-top: 2px;
-    text-align: left;
-}
-
-/* Submit button */
-button[type="submit"] {
-    background: #cfff4d;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-button[type="submit"]:hover {
-    background: #dfff6a;
-    box-shadow: 0 4px 16px rgba(207, 255, 77, 0.4);
-}
-
-/* Register link */
-.register {
-    margin-top: 18px;
-    font-size: 14px;
-    color: #707070;
-}
-
-.register a {
-    color: #6a2ab3;
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: 4px;
-}
-
-.register a:hover {
-    text-decoration: underline;
-}
-
-/* Error pop-up */
-.error-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(78, 47, 117, 0.5);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.error-popup {
-    background: #fff;
-    width: 400px;
-    max-width: 90%;
-    border-radius: 14px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    padding: 25px 20px;
-    animation: popIn 0.5s ease-out forwards, shake 0.3s ease-in-out 0.5s;
-    font-family: "Bitter", serif;
-    transform-origin: center;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.error-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #6a2ab3;
-}
-
-.error-icon {
-    margin-right: 10px;
-    font-size: 22px;
-    color: #dc3545;
-}
-
-.close-popup {
-    background: none;
-    border: none;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #6a2ab3;
-}
-
-.error-body p {
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #333;
-}
-
-.error-body strong {
-    color: #6a2ab3;
-}
-
-/* Animations */
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.7); }
-    50% { transform: scale(1.05); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+.message {
+  margin-top: 15px;
+  color: #007a5e;
+  font-size: 14px;
+  text-align: center;
 }

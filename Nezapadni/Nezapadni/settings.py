@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'main',
+    'courses',
 ]
 
 MIDDLEWARE = [
@@ -83,28 +84,52 @@ WSGI_APPLICATION = 'Nezapadni.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), 
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nezapadni_db',
+        'USER': 'nezapadni_user',
+        'PASSWORD': '7878005',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
+
+# settings.py
+
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'level': 'DEBUG',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple", # Добавляем форматтер
         },
     },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
+    "formatters": { # Добавляем секцию форматтеров
+        "simple": {
+            "format": "{levelname} {name}: {message}",
+            "style": "{",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO", # Устанавливаем корневой уровень на INFO
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        # Наш логгер для приложения accounts
+        "accounts": {
+            "handlers": ["console"],
+            "level": "DEBUG", # Устанавливаем DEBUG для приложения accounts
+            "propagate": False,
         },
     },
 }
+
 
 
 # Password validation
@@ -126,6 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', # ДОБАВЛЕНО для резерва
     'accounts.backends.EmailBackend',
 ]
 AUTH_USER_MODEL = 'accounts.CustomUser'

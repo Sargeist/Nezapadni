@@ -1,166 +1,301 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/signUp.css' %}">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <title>Sign Up</title>
+    <title>Sign Up | Nezapadni</title>
+    <style>
+        /* === Your styles (unchanged) === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bitter", serif;
+        }
+        body {
+            background: rgba(78, 47, 117, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        .signUp-box {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            border-radius: 14px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px 35px;
+            text-align: center;
+        }
+        .signUp-box h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #181818;
+        }
+        .signUp-box p {
+            font-size: 14px;
+            color: #707070;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .inputbox {
+            position: relative;
+            width: 100%;
+        }
+        .inputbox input,
+        .inputbox select {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            color: #222;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+        .inputbox select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23777' d='M6 9l-4-4h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 30px;
+        }
+        .inputbox input:focus,
+        .inputbox select:focus {
+            border-color: #6a2ab3;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(106, 42, 179, 0.15);
+        }
+        .inputbox label {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            color: #777;
+            font-size: 14px;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+        .inputbox input:focus ~ label,
+        .inputbox select:focus ~ label,
+        .inputbox input:not(:placeholder-shown) ~ label,
+        .inputbox select:not(:placeholder-shown) ~ label {
+            top: -8px;
+            left: 12px;
+            font-size: 12px;
+            background: white;
+            padding: 0 6px;
+            color: #6a2ab3;
+        }
+        button[type="submit"] {
+            background: #cfff4d;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        button[type="submit"]:hover {
+            background: #dfff6a;
+            box-shadow: 0 4px 16px rgba(207, 255, 77, 0.4);
+        }
+        .register {
+            margin-top: 18px;
+            font-size: 14px;
+            color: #707070;
+        }
+        .register a {
+            color: #6a2ab3;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 4px;
+        }
+        .register a:hover {
+            text-decoration: underline;
+        }
+        .error-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(78, 47, 117, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .error-popup {
+            background: #fff;
+            width: 400px;
+            max-width: 90%;
+            border-radius: 14px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            padding: 25px 20px;
+            animation: popIn 0.5s ease-out forwards, shake 0.3s ease-in-out 0.5s;
+            font-family: "Bitter", serif;
+            transform-origin: center;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .error-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #6a2ab3;
+        }
+        .close-popup {
+            background: none;
+            border: none;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #6a2ab3;
+        }
+        .error-body p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.7); }
+            50% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    </style>
 </head>
 <body>
-    <img src="{% static 'img/Line.png' %}" alt="Background decoration" class="bg">
-    <section>
-        <div class="signUp-box">
-            <form method="post" action="">
-                {% csrf_token %}
-                <h2>Create Account</h2>
-                <p>Join us today and start your journey</p>
 
-                <div class="inputbox">
-                    <input type="text" name="first_name" required>
-                    <label>First Name</label>
-                </div>
+<div class="signUp-box">
+    <h2>Create an Account</h2>
+    <p>Join Nezapadni to get started</p>
 
-                <div class="inputbox">
-                    <input type="text" name="last_name" required>
-                    <label>Last Name</label>
-                </div>
-
-                <div class="inputbox">
-                    <input type="email" name="email" required>
-                    <label>Email</label>
-                </div>
-
-                <div class="inputbox password-box">
-                    <input type="password" name="password1" id="password" required>
-                    <label>Password</label>
-                    <button type="button" class="toggle-password">
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-                </div>
-                <p class="password-requirement">Password must be at least 8 characters long.</p>
-
-                <div class="inputbox password-box">
-                    <input type="password" name="password2" id="passwordConfirm" required>
-                    <label>Confirm password</label>
-                    <button type="button" class="toggle-password">
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-                </div>
-
-                <div class="inputbox">
-                    <select name="role" required>
-                        <option value="" disabled selected>Select your role</option>
-                        <option value="student">Student</option>
-                        <option value="parent">Parent</option>
-                    </select>
-                </div>
-
-                <button type="submit">Sign Up</button>
-
-                <div class="register">
-                    <p>Already have an account? <a href="{% url 'login' %}">Sign in here</a></p>
-                </div>
-            </form>
-
-            <!-- Pop-up ошибок -->
-            {% if form.errors %}
-            <div class="error-popup-overlay" id="errorPopup">
-                <div class="error-popup">
-                    <div class="error-header">
-                        <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
-                        <span>Oops! Something went wrong</span>
-                        <button class="close-popup" onclick="closePopup()">×</button>
-                    </div>
-                    <div class="error-body">
-                        {% if form.errors.email %}
-                            {% for error in form.errors.email %}
-                                <p><strong>Email problem:</strong> {{ error }}</p>
-                                <p><strong>Suggestion:</strong> Please use a different email or try logging in.</p>
-                            {% endfor %}
-                        {% else %}
-                            {% if form.errors.password1 %}
-                                {% for error in form.errors.password1 %}
-                                    <p><strong>Password problem:</strong> {{ error }}</p>
-                                    {% if "too short" in error|lower %}
-                                        <p><strong>Suggestion:</strong> Your password must be at least 8 characters long.</p>
-                                    {% elif "too common" in error|lower %}
-                                        <p><strong>Suggestion:</strong> Choose a more complex password with letters, numbers, and symbols.</p>
-                                    {% elif "entirely numeric" in error|lower %}
-                                        <p><strong>Suggestion:</strong> Add letters or special characters to make it stronger.</p>
-                                    {% else %}
-                                        <p><strong>Suggestion:</strong> Please try a stronger password.</p>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-
-                            {% if form.errors.password2 %}
-                                {% for error in form.errors.password2 %}
-                                    <p><strong>Confirmation problem:</strong> {{ error }}</p>
-                                    {% if forloop.first %}
-                                        <p><strong>Suggestion:</strong> Make sure both passwords match exactly.</p>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
+    <form id="signupForm">
+        {% csrf_token %}
+        <div class="inputbox">
+            <input type="text" name="first_name" id="first_name" placeholder=" " required>
+            <label for="first_name">First Name</label>
         </div>
-    </section>
 
-    <!-- JS -->
-    <script>
-        // Toggle password visibility
-        document.querySelectorAll(".toggle-password").forEach(button => {
-            button.addEventListener("click", () => {
-                const input = button.closest('.password-box').querySelector('input');
-                const icon = button.querySelector("ion-icon");
-                if (input.type === "password") {
-                    input.type = "text";
-                    icon.setAttribute("name", "eye-off-outline");
-                } else {
-                    input.type = "password";
-                    icon.setAttribute("name", "eye-outline");
-                }
+        <div class="inputbox">
+            <input type="text" name="last_name" id="last_name" placeholder=" " required>
+            <label for="last_name">Last Name</label>
+        </div>
+
+        <div class="inputbox">
+            <input type="email" name="email" id="email" placeholder=" " required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="inputbox password-box">
+            <input type="password" name="password1" id="password1" placeholder=" " required>
+            <label for="password1">Password</label>
+        </div>
+
+        <div class="inputbox password-box">
+            <input type="password" name="password2" id="password2" placeholder=" " required>
+            <label for="password2">Confirm Password</label>
+        </div>
+
+        <div class="inputbox">
+            <select name="role" id="role" required>
+                <option value="" disabled selected hidden></option>
+                <option value="student">Student</option>
+                <option value="parent">Parent</option>
+            </select>
+            <label for="role">Role</label>
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="register">
+        Already have an account?
+        <a href="/login/">Log in</a>
+    </p>
+</div>
+
+<!-- Error Popup -->
+<div class="error-popup-overlay" id="errorPopup">
+    <div class="error-popup">
+        <div class="error-header">
+            <span>Error</span>
+            <button class="close-popup" onclick="closePopup()">&times;</button>
+        </div>
+        <div class="error-body" id="errorBody"></div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("signupForm");
+    const errorPopup = document.getElementById("errorPopup");
+    const errorBody = document.getElementById("errorBody");
+
+    function showErrorPopup(message) {
+        console.error("Signup error:", message);
+        errorBody.innerHTML = `<p>${message}</p>`;
+        errorPopup.style.display = "flex";
+    }
+
+    function closePopup() {
+        errorPopup.style.display = "none";
+    }
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        try {
+            const response = await fetch("{% url 'signup' %}", {
+                method: "POST",
+                headers: { "X-CSRFToken": csrfToken },
+                body: formData
             });
-        });
 
-        // Закрытие поп-апа
-        function closePopup() {
-            const popup = document.getElementById('errorPopup');
-            if (popup) popup.style.display = 'none';
-        }
+            const data = await response.json().catch(() => ({}));
+            console.log("Server response:", data);
 
-        // Показать поп-ап при загрузке, если есть ошибки
-        window.addEventListener('load', () => {
-            const popup = document.getElementById('errorPopup');
-            if (popup) popup.style.display = 'flex';
-        });
-
-        // Закрытие поп-ап при клике вне окна
-        document.addEventListener('click', function(e) {
-            const popup = document.getElementById('errorPopup');
-            if (popup && e.target === popup) {
-                closePopup();
-            }
-        });
-
-        // Динамическая подсветка требования к паролю
-        const passwordInput = document.getElementById('password');
-        const requirementText = document.querySelector('.password-requirement');
-
-        passwordInput.addEventListener('input', () => {
-            if (passwordInput.value.length >= 8) {
-                requirementText.style.color = 'green';
+            if (data.success) {
+                window.location.href = "/login/";
             } else {
-                requirementText.style.color = '#6a2ab3';
+                showErrorPopup(data.error || "Unknown server error occurred.");
             }
-        });
-    </script>
+        } catch (err) {
+            console.error("Fetch error:", err);
+            showErrorPopup("A connection error occurred. Please try again.");
+        }
+    });
+</script>
+
 </body>
 </html>

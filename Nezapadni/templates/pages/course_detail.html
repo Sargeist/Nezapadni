@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ course.title }} - Nezapadni{% endblock %}
+
+{% block content %}
+<section class="course-detail">
+    <div class="container">
+        <h1>{{ course.title }}</h1>
+        <p>{{ course.description }}</p>
+
+        {% if course.image %}
+            <img src="{{ course.image.url }}" alt="{{ course.title }}">
+        {% endif %}
+
+        <p><strong>Students enrolled:</strong> {{ course.students_enrolled }}</p>
+    </div>
+</section>
+{% endblock %}
