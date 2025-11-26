@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Purchase Successful{% endblock %}
+
+{% block content %}
+<section class="checkout-success">
+    <div class="container">
+        <h1>🎉 Thank You for Your Purchase!</h1>
+
+        <p class="success-text">
+            You now have full access to the course:
+        </p>
+
+        <h2 class="course-title">{{ course.title }}</h2>
+
+        <div class="success-box">
+            <img src="{% static 'img/UsersFour.svg' %}" alt="success" class="success-icon">
+
+            <p>Your payment has been successfully processed.</p>
+
+            <a href="{% url 'courses:detail' course.slug %}" class="btn btn-primary">
+                Go to the Course →
+            </a>
+        </div>
+
+        <p class="small-info">
+            A confirmation email has been sent to your email address.
+        </p>
+    </div>
+</section>
+
+<style>
+.checkout-success {
+    padding: 80px 0;
+    text-align: center;
+}
+.checkout-success .course-title {
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+.checkout-success .success-text {
+    font-size: 18px;
+}
+.success-box {
+    margin: 40px auto;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background: #f3f7ff;
+    max-width: 600px;
+}
+.success-box p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+.success-icon {
+    width: 60px;
+    margin-bottom: 15px;
+}
+.btn-primary {
+    margin-top: 10px;
+}
+.small-info {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+</style>
+
+{% endblock %}

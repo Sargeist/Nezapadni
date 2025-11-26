@@ -1,109 +1,98 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nezapadni - Parents</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/css/parents.css">
-    <link rel="preload" href="../../static/img/nezapadni_single_green.png" as="image">
-    <link rel="preload" href="../../static/img/Gemini_Generated_Image_f32016f32016f320.png" as="image">
-    <link rel="preload" href="../../static/img/Gemini_Generated_Image_xiebwcxiebwcxieb.png" as="image">
-</head>
-<body>
-    <header class="site-header">
-        <div class="container nav">
-            <div class="brand">
-                <a href="index.html" class="brand-link">
-                    <img class="logo-img" src="../../static/img/nezapadni_single_green.png" alt="Nezapadni logo" width="30" height="30">
-                    <span class="logo-text">Nezapadni</span>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="parents.html" class="nav-link is-active">Parents</a>
-                <a href="story.html" class="nav-link">Story</a>
-                <a href="vision.html" class="nav-link">Vision</a>
-                <a href="corses.html" class="nav-link">Courses</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-small">Sign In</a>
-            </div>
-        </div>
-    </header>
+{% extends "base.html" %}
+{% load static %}
 
-    <section class="hero parents-hero">
-        <div class="container hero-grid">
-            <div class="portrait-frame parents-portrait-left">
-                <img src="../../static/img/Gemini_Generated_Image_f32016f32016f320.png" alt="Woman with child" class="portrait-img" loading="lazy">
-            </div>
-            <div class="hero-copy">
-                <h1 class="hero-title">Partnering With<br>You In Your Child's<br>Growth</h1>
-                </div>
-                <div class="portrait-frame parents-portrait-right">
-                    <img src="../../static/img/Gemini_Generated_Image_xiebwcxiebwcxieb.png" alt="Man with child" class="portrait-img" loading="lazy">
-            </div>
-        </div>
+{% block title %}Nezapadni - Parents{% endblock %}
 
-        <div class="marquee" aria-label="Nezapadni ticker">
-            <div class="marquee-track">
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-                <span class="marq-item"><img class="marq-logo" src="../../static/img/nezapadni_single_green.png" alt="Логотип Nezapadni"> Nezapadni</span>
-                <span class="marq-sep">✷</span>
-            </div>
-        </div>
-    </section>
+{# если в base.html есть блок для подсветки пункта меню Parents #}
+{% block nav_parents_active %} is-active{% endblock %}
 
-    <section class="message-section">
-        <div class="decorative-square-left"></div>
-        <div class="container">
-            <div class="message-tag">Speech</div>
-            <h2 class="message-title">
-                <span class="title-dark">Our Message For</span>
-                <span class="title-purple">Parents</span>
-            </h2>
-            <div class="message-content">
-                <p class="message-text">
-                    At Nezapadni, we believe that every child's journey of learning begins with the love, care, and guidance they receive at home. As parents, you play the most important role in shaping not only their academic growth but also their confidence, creativity, and character.
-                </p>
-                <p class="message-text">
-                    Our courses are designed to complement your efforts—making learning both engaging and meaningful. We understand the trust you place in us when choosing a platform for your child, and we take that responsibility with the utmost seriousness. Here, learning is not limited to textbooks; it's about developing curiosity, problem-solving skills, and a lifelong passion for knowledge.
-                </p>
-                <p class="message-text">
-                    We see you as partners in this journey. By working together—parents, teachers, and mentors—we can nurture children to become thoughtful, capable, and confident individuals who are prepared to face tomorrow's challenges.
-                </p>
-                <p class="message-text">
-                    Thank you for allowing us to be part of your child's world. Together, we can create an environment where learning feels exciting, safe, and full of possibilities.
-                </p>
-            </div>
-            <a href="#" class="btn-learn-more">
-                <span>Learn More</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-    </section>
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'css/parents.css' %}">
+{% endblock %}
 
-    <section class="what-section">
-        <div class="container">
-            <div class="what-grid">
+{% block content %}
+
+<section class="hero parents-hero">
+    <div class="container hero-grid">
+        <div class="portrait-frame parents-portrait-left">
+            <img src="{% static 'img/Gemini_Generated_Image_f32016f32016f320.png' %}" alt="Woman with child" class="portrait-img" loading="lazy">
+        </div>
+        <div class="hero-copy">
+            <h1 class="hero-title">Partnering With<br>You In Your Child's<br>Growth</h1>
+        </div>
+        <div class="portrait-frame parents-portrait-right">
+            <img src="{% static 'img/Gemini_Generated_Image_xiebwcxiebwcxieb.png' %}" alt="Man with child" class="portrait-img" loading="lazy">
+        </div>
+    </div>
+
+    <div class="marquee" aria-label="Nezapadni ticker">
+        <div class="marquee-track">
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Логотип Nezapadni"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+        </div>
+    </div>
+</section>
+
+<section class="message-section">
+    <div class="decorative-square-left"></div>
+    <div class="container">
+        <div class="message-tag">Speech</div>
+        <h2 class="message-title">
+            <span class="title-dark">Our Message For</span>
+            <span class="title-purple">Parents</span>
+        </h2>
+        <div class="message-content">
+            <p class="message-text">
+                At Nezapadni, we believe that every child's journey of learning begins with the love, care, and guidance they receive at home. As parents, you play the most important role in shaping not only their academic growth but also their confidence, creativity, and character.
+            </p>
+            <p class="message-text">
+                Our courses are designed to complement your efforts—making learning both engaging and meaningful. We understand the trust you place in us when choosing a platform for your child, and we take that responsibility with the utmost seriousness. Here, learning is not limited to textbooks; it's about developing curiosity, problem-solving skills, and a lifelong passion for knowledge.
+            </p>
+            <p class="message-text">
+                We see you as partners in this journey. By working together—parents, teachers, and mentors—we can nurture children to become thoughtful, capable, and confident individuals who are prepared to face tomorrow's challenges.
+            </p>
+            <p class="message-text">
+                Thank you for allowing us to be part of your child's world. Together, we can create an environment where learning feels exciting, safe, and full of possibilities.
+            </p>
+        </div>
+        <a href="#" class="btn-learn-more">
+            <span>Learn More</span>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+</section>
+
+<section class="what-section">
+    <div class="container">
+        <div class="what-grid">
             <div class="what-content">
                 <h2 class="what-title">What is Nezapadni</h2>
                 <div class="services-list">
                     <div class="service-item">
                         <div class="service-icon">
-                            <img src="../../static/img/dashboard_customize.svg" alt="Dashboard" class="service-icon-img">
+                            <img src="{% static 'img/dashboard_customize.svg' %}" alt="Dashboard" class="service-icon-img">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Custom Course Development</h3>
@@ -112,7 +101,7 @@
                     </div>
                     <div class="service-item">
                         <div class="service-icon">
-                            <img src="../../static/img/interactive_space.svg" alt="Interactive Space" class="service-icon-img">
+                            <img src="{% static 'img/interactive_space.svg' %}" alt="Interactive Space" class="service-icon-img">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Interactive E-Learning Modules</h3>
@@ -121,7 +110,7 @@
                     </div>
                     <div class="service-item">
                         <div class="service-icon">
-                            <img src="../../static/img/workspace_premium.svg" alt="Workspace" class="service-icon-img">
+                            <img src="{% static 'img/workspace_premium.svg' %}" alt="Workspace" class="service-icon-img">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Certification Accreditation Programs</h3>
@@ -130,7 +119,7 @@
                     </div>
                     <div class="service-item">
                         <div class="service-icon">
-                            <img src="../../static/img/photo_auto_merge.svg" alt="Photo Auto Merge" class="service-icon-img">
+                            <img src="{% static 'img/photo_auto_merge.svg' %}" alt="Photo Auto Merge" class="service-icon-img">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Blended Learning Solutions</h3>
@@ -140,850 +129,766 @@
                 </div>
             </div>
             <div class="what-visual">
-                    <p class="what-intro">Our LMS platform provides a seamless learning experience with a vast library of courses across various disciplines.</p>
-                    <div class="visual-wrapper">
-                        <div class="image-block"></div>
-                        <div class="percentage-wrapper">
-                    <div class="percentage">89%</div>
-                            <div class="percentage-text-group">
-                                <p class="percentage-text">Equip yourself with the skills</p>
-                                <p class="percentage-text">and knowledge needed.</p>
-                    </div>
-                </div>
+                <p class="what-intro">Our LMS platform provides a seamless learning experience with a vast library of courses across various disciplines.</p>
+                <div class="visual-wrapper">
+                    <div class="image-block"></div>
+                    <div class="percentage-wrapper">
+                        <div class="percentage">89%</div>
+                        <div class="percentage-text-group">
+                            <p class="percentage-text">Equip yourself with the skills</p>
+                            <p class="percentage-text">and knowledge needed.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="why-section">
-        <div class="container">
-            <div class="why-tag">About Us</div>
-            <h2 class="why-title">Why Give <span class="why-title-highlight">Nezapadni</span> A Chance?</h2>
-            <p class="why-description">
-                Join our thriving online community that provides a safe and supportive space for mutual encouragement, knowledge sharing, and continuous personal growth. Connect with like-minded individuals who are on their own journey of self-discovery and development.
-            </p>
-            <div class="why-cards">
-                <div class="why-card">
-                    <div class="why-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="why-card-title">Your support for the project means</h3>
-                    <ul class="why-card-list">
-                        <li>certainty that your child spends time in a meaningful environment</li>
-                        <li>a guarantee of clear values</li>
-                        <li>joy from seeing your child grow in line with family values</li>
-                    </ul>
-                    <a href="#" class="why-card-link">Learn More ></a>
+<section class="why-section">
+    <div class="container">
+        <div class="why-tag">About Us</div>
+        <h2 class="why-title">Why Give <span class="why-title-highlight">Nezapadni</span> A Chance?</h2>
+        <p class="why-description">
+            Join our thriving online community that provides a safe and supportive space for mutual encouragement, knowledge sharing, and continuous personal growth. Connect with like-minded individuals who are on their own journey of self-discovery and development.
+        </p>
+        <div class="why-cards">
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
                 </div>
-                <div class="why-card">
-                    <div class="why-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            <polyline points="17 6 23 6 23 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="why-card-title">For your child, it means</h3>
-                    <ul class="why-card-list">
-                        <li>quality educational and experiential content</li>
-                        <li>time spent with inspiring peers</li>
-                        <li>building new meaningful relationships</li>
-                    </ul>
-                    <a href="#" class="why-card-link">Learn More ></a>
+                <h3 class="why-card-title">Your support for the project means</h3>
+                <ul class="why-card-list">
+                    <li>certainty that your child spends time in a meaningful environment</li>
+                    <li>a guarantee of clear values</li>
+                    <li>joy from seeing your child grow in line with family values</li>
+                </ul>
+                <a href="#" class="why-card-link">Learn More ></a>
+            </div>
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <polyline points="17 6 23 6 23 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
                 </div>
-                <div class="why-card">
-                    <div class="why-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            <path d="M20 8v6M23 11h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="why-card-title">As part of Nezapadni, your child</h3>
-                    <ul class="why-card-list">
-                        <li>lives with awareness of responsibility and self-reflection</li>
-                        <li>confidently develops talents and abilities</li>
-                        <li>has clear values they can stand for</li>
-                        <li>is part of a safe and supportive community</li>
-                        <li>is not afraid to try new things and learn from mistakes</li>
-                    </ul>
-                    <a href="#" class="why-card-link">Learn More ></a>
+                <h3 class="why-card-title">For your child, it means</h3>
+                <ul class="why-card-list">
+                    <li>quality educational and experiential content</li>
+                    <li>time spent with inspiring peers</li>
+                    <li>building new meaningful relationships</li>
+                </ul>
+                <a href="#" class="why-card-link">Learn More ></a>
+            </div>
+            <div class="why-card">
+                <div class="why-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M20 8v6M23 11h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
                 </div>
+                <h3 class="why-card-title">As part of Nezapadni, your child</h3>
+                <ul class="why-card-list">
+                    <li>lives with awareness of responsibility and self-reflection</li>
+                    <li>confidently develops talents and abilities</li>
+                    <li>has clear values they can stand for</li>
+                    <li>is part of a safe and supportive community</li>
+                    <li>is not afraid to try new things and learn from mistakes</li>
+                </ul>
+                <a href="#" class="why-card-link">Learn More ></a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="how-section">
-        <div class="container how-container">
-            <div class="how-tag">How It Works</div>
-            <h2 class="how-title">How Does <span class="how-title-highlight">Nezapadni</span> Work?</h2>
-            <p class="how-description">
-                Join our thriving online community that provides a safe and supportive space for mutual encouragement, knowledge sharing, and continuous personal growth. Connect with like-minded individuals who are on their own journey of self-discovery and development.
-            </p>
-            <div class="how-cards">
-                <div class="how-card how-card-purple">
-                    <div class="how-card-icon">
-                        <img src="../../static/img/LockKey.svg" alt="Lock" class="how-icon-img">
-                    </div>
-                    <h3 class="how-card-title">Step 1</h3>
-                    <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="how-card-link">Learn More ></a>
+<section class="how-section">
+    <div class="container how-container">
+        <div class="how-tag">How It Works</div>
+        <h2 class="how-title">How Does <span class="how-title-highlight">Nezapadni</span> Work?</h2>
+        <p class="how-description">
+            Join our thriving online community that provides a safe and supportive space for mutual encouragement, knowledge sharing, and continuous personal growth. Connect with like-minded individuals who are on their own journey of self-discovery and development.
+        </p>
+        <div class="how-cards">
+            <div class="how-card how-card-purple">
+                <div class="how-card-icon">
+                    <img src="{% static 'img/LockKey.svg' %}" alt="Lock" class="how-icon-img">
                 </div>
-                <div class="how-card how-card-dark">
-                    <div class="how-card-icon">
-                        <img src="../../static/img/TrendUp.svg" alt="Trending Up" class="how-icon-img">
-                    </div>
-                    <h3 class="how-card-title">Step 2</h3>
-                    <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="how-card-link">Learn More ></a>
+                <h3 class="how-card-title">Step 1</h3>
+                <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <a href="#" class="how-card-link">Learn More ></a>
+            </div>
+            <div class="how-card how-card-dark">
+                <div class="how-card-icon">
+                    <img src="{% static 'img/TrendUp.svg' %}" alt="Trending Up" class="how-icon-img">
                 </div>
-                <div class="how-card how-card-purple">
-                    <div class="how-card-icon">
-                        <img src="../../static/img/UsersFour.svg" alt="Users" class="how-icon-img">
-                    </div>
-                    <h3 class="how-card-title">Step 3</h3>
-                    <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="how-card-link">Learn More ></a>
+                <h3 class="how-card-title">Step 2</h3>
+                <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <a href="#" class="how-card-link">Learn More ></a>
+            </div>
+            <div class="how-card how-card-purple">
+                <div class="how-card-icon">
+                    <img src="{% static 'img/UsersFour.svg' %}" alt="Users" class="how-icon-img">
                 </div>
-                <div class="how-card how-card-purple">
-                    <div class="how-card-icon">
-                        <img src="../../static/img/UsersFour.svg" alt="Users" class="how-icon-img">
-                    </div>
-                    <h3 class="how-card-title">Step 4</h3>
-                    <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="how-card-link">Learn More ></a>
+                <h3 class="how-card-title">Step 3</h3>
+                <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <a href="#" class="how-card-link">Learn More ></a>
+            </div>
+            <div class="how-card how-card-purple">
+                <div class="how-card-icon">
+                    <img src="{% static 'img/UsersFour.svg' %}" alt="Users" class="how-icon-img">
                 </div>
-                <div class="how-card how-card-purple">
-                    <div class="how-card-icon">
-                        <img src="../../static/img/UsersFour.svg" alt="Users" class="how-icon-img">
-                    </div>
-                    <h3 class="how-card-title">Step 5</h3>
-                    <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="how-card-link">Learn More ></a>
+                <h3 class="how-card-title">Step 4</h3>
+                <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <a href="#" class="how-card-link">Learn More ></a>
+            </div>
+            <div class="how-card how-card-purple">
+                <div class="how-card-icon">
+                    <img src="{% static 'img/UsersFour.svg' %}" alt="Users" class="how-icon-img">
                 </div>
+                <h3 class="how-card-title">Step 5</h3>
+                <p class="how-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <a href="#" class="how-card-link">Learn More ></a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="premium-section">
-        <div class="container premium-container">
-            <div class="premium-decorative premium-decorative-1">
-                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="160" cy="40" r="30" fill="rgba(218, 246, 83, 0.15)"/>
-                    <circle cx="180" cy="60" r="20" fill="rgba(218, 246, 83, 0.1)"/>
-                    <rect x="140" y="20" width="40" height="40" rx="8" transform="rotate(15 160 40)" fill="rgba(139, 111, 168, 0.2)"/>
-                    <rect x="150" y="50" width="30" height="30" rx="6" transform="rotate(-10 165 65)" fill="rgba(139, 111, 168, 0.15)"/>
-                </svg>
+<section class="premium-section">
+    <div class="container premium-container">
+        <div class="premium-decorative premium-decorative-1">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                <circle cx="160" cy="40" r="30" fill="rgba(218, 246, 83, 0.15)"/>
+                <circle cx="180" cy="60" r="20" fill="rgba(218, 246, 83, 0.1)"/>
+                <rect x="140" y="20" width="40" height="40" rx="8" transform="rotate(15 160 40)" fill="rgba(139, 111, 168, 0.2)"/>
+                <rect x="150" y="50" width="30" height="30" rx="6" transform="rotate(-10 165 65)" fill="rgba(139, 111, 168, 0.15)"/>
+            </svg>
+        </div>
+        <div class="premium-decorative premium-decorative-2">
+            <svg width="150" height="150" viewBox="0 0 150 150" fill="none">
+                <circle cx="30" cy="30" r="25" fill="rgba(218, 246, 83, 0.12)"/>
+                <rect x="10" y="10" width="35" height="35" rx="6" transform="rotate(-15 27.5 27.5)" fill="rgba(139, 111, 168, 0.18)"/>
+            </svg>
+        </div>
+        <div class="premium-decorative premium-decorative-3">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                <circle cx="90" cy="90" r="20" fill="rgba(218, 246, 83, 0.1)"/>
+                <rect x="70" y="70" width="30" height="30" rx="5" transform="rotate(20 85 85)" fill="rgba(139, 111, 168, 0.15)"/>
+            </svg>
+        </div>
+        <div class="premium-decorative premium-decorative-4">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="20" r="15" fill="rgba(139, 111, 168, 0.2)"/>
+                <rect x="35" y="35" width="25" height="25" rx="4" transform="rotate(-25 47.5 47.5)" fill="rgba(218, 246, 83, 0.12)"/>
+            </svg>
+        </div>
+        <div class="premium-decorative premium-decorative-5">
+            <svg width="130" height="130" viewBox="0 0 130 130" fill="none">
+                <circle cx="20" cy="110" r="18" fill="rgba(218, 246, 83, 0.1)"/>
+                <rect x="5" y="95" width="28" height="28" rx="5" transform="rotate(12 19 109)" fill="rgba(139, 111, 168, 0.16)"/>
+            </svg>
+        </div>
+        <div class="premium-tag">Message</div>
+        <h2 class="premium-title">
+            Unlock The <span class="premium-title-highlight">Premium</span> Content
+        </h2>
+        <div class="premium-cards">
+            <div class="premium-card">
+                <div class="premium-card-icon">
+                    <span class="premium-card-icon-emoji">📚</span>
+                </div>
+                <h3 class="premium-card-title">interactive lessons</h3>
+                <p class="premium-card-description">engaging content that adapts to your learning style and pace</p>
             </div>
-            <div class="premium-decorative premium-decorative-2">
-                <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="25" fill="rgba(218, 246, 83, 0.12)"/>
-                    <rect x="10" y="10" width="35" height="35" rx="6" transform="rotate(-15 27.5 27.5)" fill="rgba(139, 111, 168, 0.18)"/>
-                </svg>
+            <div class="premium-card">
+                <div class="premium-card-icon">
+                    <span class="premium-card-icon-emoji">📚</span>
+                </div>
+                <h3 class="premium-card-title">personalized learning</h3>
+                <p class="premium-card-description">engaging content that adapts to your learning style and pace</p>
             </div>
-            <div class="premium-decorative premium-decorative-3">
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="90" cy="90" r="20" fill="rgba(218, 246, 83, 0.1)"/>
-                    <rect x="70" y="70" width="30" height="30" rx="5" transform="rotate(20 85 85)" fill="rgba(139, 111, 168, 0.15)"/>
-                </svg>
+            <div class="premium-card">
+                <div class="premium-card-icon">
+                    <span class="premium-card-icon-emoji">📚</span>
+                </div>
+                <h3 class="premium-card-title">safe environment</h3>
+                <p class="premium-card-description">value-driven platform designed with safety and privacy in mind</p>
             </div>
-            <div class="premium-decorative premium-decorative-4">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="20" r="15" fill="rgba(139, 111, 168, 0.2)"/>
-                    <rect x="35" y="35" width="25" height="25" rx="4" transform="rotate(-25 47.5 47.5)" fill="rgba(218, 246, 83, 0.12)"/>
+        </div>
+        <div class="premium-buttons">
+            <a href="#" class="premium-btn">I am a high school student →</a>
+            <a href="#" class="premium-btn">I am a parent →</a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="container testimonials-container">
+        <div class="testimonials-tag">How It Works</div>
+        <h2 class="testimonials-title">What Our Students Say?</h2>
+        
+        <div class="testimonials-wrapper">
+            <button class="testimonials-nav-btn testimonials-nav-btn-prev" aria-label="Previous testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+            </button>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student1.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">James L., Web Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student2.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Sarah M., Data Analyst</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student3.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Michael K., UX Designer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student1.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Emily R., Software Engineer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student2.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">David T., Mobile Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student3.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Lisa P., Product Manager</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student1.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Robert W., DevOps Engineer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="{% static 'img/student2.png' %}" alt="Student testimonial" loading="lazy">
+                        </div>
+                        <div class="testimonial-content testimonial-purple">
+                            <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
+                            <p class="testimonial-author">Anna B., Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="premium-decorative premium-decorative-5">
-                <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="110" r="18" fill="rgba(218, 246, 83, 0.1)"/>
-                    <rect x="5" y="95" width="28" height="28" rx="5" transform="rotate(12 19 109)" fill="rgba(139, 111, 168, 0.16)"/>
+            
+            <button class="testimonials-nav-btn testimonials-nav-btn-next" aria-label="Next testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </div>
-            <div class="premium-tag">Message</div>
-            <h2 class="premium-title">
-                Unlock The <span class="premium-title-highlight">Premium</span> Content
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="contact-title">
+                Let's Start a <span class="title-green">Conversation</span>
             </h2>
-            <div class="premium-cards">
-                <div class="premium-card">
-                    <div class="premium-card-icon">
-                        <span class="premium-card-icon-emoji">📚</span>
-                    </div>
-                    <h3 class="premium-card-title">interactive lessons</h3>
-                    <p class="premium-card-description">engaging content that adapts to your learning style and pace</p>
-                </div>
-                <div class="premium-card">
-                    <div class="premium-card-icon">
-                        <span class="premium-card-icon-emoji">📚</span>
-                    </div>
-                    <h3 class="premium-card-title">personalized learning</h3>
-                    <p class="premium-card-description">engaging content that adapts to your learning style and pace</p>
-                </div>
-                <div class="premium-card">
-                    <div class="premium-card-icon">
-                        <span class="premium-card-icon-emoji">📚</span>
-                    </div>
-                    <h3 class="premium-card-title">safe environment</h3>
-                    <p class="premium-card-description">value-driven platform designed with safety and privacy in mind</p>
-                </div>
-            </div>
-            <div class="premium-buttons">
-                <a href="#" class="premium-btn">I am a high school student →</a>
-                <a href="#" class="premium-btn">I am a parent →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-section">
-        <div class="container testimonials-container">
-            <div class="testimonials-tag">How It Works</div>
-            <h2 class="testimonials-title">What Our Students Say?</h2>
+            <p class="contact-subtitle">
+                We're here to help you succeed. Reach out and let's discuss how we can work together.
+            </p>
             
-            <div class="testimonials-wrapper">
-                <button class="testimonials-nav-btn testimonials-nav-btn-prev" aria-label="Previous testimonial">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                
-                <div class="testimonials-carousel">
-                    <div class="testimonials-track">
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student1.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">James L., Web Developer</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student2.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Sarah M., Data Analyst</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student3.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Michael K., UX Designer</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student1.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Emily R., Software Engineer</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student2.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">David T., Mobile Developer</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student3.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Lisa P., Product Manager</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../../static/img/student1.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Robert W., DevOps Engineer</p>
-                            </div>
-                        </div>
-                        
-                <div class="testimonial-card">
-                    <div class="testimonial-image">
-                                <img src="../../static/img/student2.png" alt="Student testimonial" loading="lazy">
-                            </div>
-                            <div class="testimonial-content testimonial-purple">
-                                <p class="testimonial-quote">This platform helped me switch careers! The courses were easy to follow, and I landed a new job in just months.</p>
-                                <p class="testimonial-author">Anna B., Frontend Developer</p>
-                            </div>
-                    </div>
-                    </div>
-                </div>
-                
-                <button class="testimonials-nav-btn testimonials-nav-btn-next" aria-label="Next testimonial">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-header">
-                <h2 class="contact-title">
-                    Let's Start a <span class="title-green">Conversation</span>
-                </h2>
-                <p class="contact-subtitle">
-                    We're here to help you succeed. Reach out and let's discuss how we can work together.
-                </p>
-                
-                <div class="contact-info-cards">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <span class="contact-info-text">support@example.com</span>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <span class="contact-info-text">+1(555)1123-4567</span>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <span class="contact-info-text">San Francisco, CA</span>
-                    </div>
-                    
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <span class="contact-info-text">Within 24 hours</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-content">
-                <div class="company-info">
-                    <h3 class="company-title">Company Information</h3>
-                    <div class="verified-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6" stroke="currentColor" stroke-width="2"/>
+            <div class="contact-info-cards">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
                         </svg>
-                        <span>Verified Business</span>
                     </div>
-                    <p class="company-description">
-                        Official company details and registration information for your reference.
-                    </p>
-                    
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">COMPANY NAME</span>
-                                <div class="info-value">
-                                    <span>Nezapadni</span>
-                                    <span class="info-tag">business</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 21V7l8-4v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 21V11l-6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">LEGAL FORM</span>
-                                <div class="info-value">
-                                    <span>Limited Liability Company</span>
-                                    <span class="info-tag">business</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">COMPANY ID</span>
-                                <div class="info-value">
-                                    <span>123456789</span>
-                                    <span class="info-tag">business</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">TAX ID</span>
-                                <div class="info-value">
-                                    <span>987654321</span>
-                                    <span class="info-tag">legal</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">REGISTERED ADDRESS</span>
-                                <div class="info-value">
-                                    <span>123 Main Street, Anytown, USA</span>
-                                    <span class="info-tag">location</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">ACCOUNT NUMBER</span>
-                                <div class="info-value">
-                                    <span>1234567890</span>
-                                    <span class="info-tag">banking</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">IBAN</span>
-                                <div class="info-value">
-                                    <span>US12345678901234567890</span>
-                                    <span class="info-tag">banking</span>
-                                </div>
-                    </div>
+                    <span class="contact-info-text">support@example.com</span>
                 </div>
                 
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">BIC/SWIFT</span>
-                                <div class="info-value">
-                                    <span>ABCDUSNY</span>
-                                    <span class="info-tag">banking</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                     </div>
-                    
-                    <div class="security-footer">
-                        <div class="security-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="security-text">
-                            <span class="security-title">Secure & Verified</span>
-                            <span class="security-subtitle">All information is verified and regularly updated</span>
-                        </div>
-                    </div>
+                    <span class="contact-info-text">+1(555)1123-4567</span>
                 </div>
                 
-                <div class="contact-form-card">
-                    <div class="form-header">
-                        <h3 class="form-title">Send us a message</h3>
-                        <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                     </div>
-                    
-                    <form class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstNameParents" class="form-label">First Name*</label>
-                                <input type="text" id="firstNameParents" name="firstName" class="form-input" placeholder="John" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastNameParents" class="form-label">Last Name*</label>
-                                <input type="text" id="lastNameParents" name="lastName" class="form-input" placeholder="Doe" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="emailParents" class="form-label">Email Address*</label>
-                            <input type="email" id="emailParents" name="email" class="form-input" placeholder="john.doe@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="messageParents" class="form-label">Your Message*</label>
-                            <textarea id="messageParents" name="message" class="form-textarea" placeholder="Tell us about your project, questions, or how we can help you..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-send-message">
-                            <span>Send Message</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
-                                <polygon points="22,2 15,22 11,13 2,9" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </button>
-                        
-                        <div class="security-disclaimer">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="16" r="1" stroke="currentColor" stroke-width="2"/>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Your information is secure and will never be shared with third parties.</span>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <img class="footer-logo-img" src="../../static/img/nezapadni_single_green.png" alt="Nezapadni logo">
-                <span class="footer-logo-text">Nezapadni</span>
-            </div>
-            
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3 class="footer-title">Quick Link</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="#" class="footer-link">About Us</a></li>
-                        <li><a href="story.html" class="footer-link">Story</a></li>
-                        <li><a href="#" class="footer-link">Contact</a></li>
-                    </ul>
+                    <span class="contact-info-text">San Francisco, CA</span>
                 </div>
                 
-                <div class="footer-column">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <ul class="footer-contacts">
-                        <li class="footer-contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>+123 456 7890</span>
-                        </li>
-                        <li class="footer-contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>sales@nezapadni.com</span>
-                        </li>
-                        <li class="footer-contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>123 Nezapadni, Luxe City, 45678</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Term of Use</a></li>
-                    </ul>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="contact-info-text">Within 24 hours</span>
                 </div>
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="footer-copyright">© 2026 Fiverr. All rights reserved.</p>
+        <div class="contact-content">
+            <div class="company-info">
+                <h3 class="company-title">Company Information</h3>
+                <div class="verified-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Verified Business</span>
+                </div>
+                <p class="company-description">
+                    Official company details and registration information for your reference.
+                </p>
+                
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">COMPANY NAME</span>
+                            <div class="info-value">
+                                <span>Nezapadni</span>
+                                <span class="info-tag">business</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 21V7l8-4v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19 21V11l-6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">LEGAL FORM</span>
+                            <div class="info-value">
+                                <span>Limited Liability Company</span>
+                                <span class="info-tag">business</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">COMPANY ID</span>
+                            <div class="info-value">
+                                <span>123456789</span>
+                                <span class="info-tag">business</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">TAX ID</span>
+                            <div class="info-value">
+                                <span>987654321</span>
+                                <span class="info-tag">legal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">REGISTERED ADDRESS</span>
+                            <div class="info-value">
+                                <span>123 Main Street, Anytown, USA</span>
+                                <span class="info-tag">location</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">ACCOUNT NUMBER</span>
+                            <div class="info-value">
+                                <span>1234567890</span>
+                                <span class="info-tag">banking</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">IBAN</span>
+                            <div class="info-value">
+                                <span>US12345678901234567890</span>
+                                <span class="info-tag">banking</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">BIC/SWIFT</span>
+                            <div class="info-value">
+                                <span>ABCDUSNY</span>
+                                <span class="info-tag">banking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="security-footer">
+                    <div class="security-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="security-text">
+                        <span class="security-title">Secure & Verified</span>
+                        <span class="security-subtitle">All information is verified and regularly updated</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-card">
+                <div class="form-header">
+                    <h3 class="form-title">Send us a message</h3>
+                    <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstNameParents" class="form-label">First Name*</label>
+                            <input type="text" id="firstNameParents" name="firstName" class="form-input" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastNameParents" class="form-label">Last Name*</label>
+                            <input type="text" id="lastNameParents" name="lastName" class="form-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emailParents" class="form-label">Email Address*</label>
+                        <input type="email" id="emailParents" name="email" class="form-input" placeholder="john.doe@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messageParents" class="form-label">Your Message*</label>
+                        <textarea id="messageParents" name="message" class="form-textarea" placeholder="Tell us about your project, questions, or how we can help you..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-send-message">
+                        <span>Send Message</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+                            <polygon points="22,2 15,22 11,13 2,9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="security-disclaimer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="16" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Your information is secure and will never be shared with third parties.</span>
+                    </div>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
+<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
 
-    <script>
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
+<script>
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    });
 
-        // Marquee Animation
-        document.addEventListener("DOMContentLoaded", () => {
-            const marquee = document.querySelector('.marquee');
-            const track = document.querySelector('.marquee-track');
-            if (!marquee || !track) {
-                return;
+    // Marquee Animation
+    document.addEventListener("DOMContentLoaded", () => {
+        const marquee = document.querySelector('.marquee');
+        const track = document.querySelector('.marquee-track');
+        if (!marquee || !track) {
+            return;
+        }
+
+        const speed = 150; 
+
+        const setupMarquee = () => {
+            const originalContent = Array.from(track.children);
+            if (originalContent.length === 0) return;
+            track.innerHTML = '';
+            originalContent.forEach(item => track.appendChild(item));
+            
+            const baseUnitWidth = track.offsetWidth;
+            const marqueeWidth = marquee.offsetWidth;
+            if (baseUnitWidth === 0 || marqueeWidth === 0) {
+                console.warn('Marquee setup failed: widths are zero.');
+                return; 
             }
-
-            const speed = 150; 
-
-            const setupMarquee = () => {
-                const originalContent = Array.from(track.children);
-                if (originalContent.length === 0) return;
-                track.innerHTML = '';
-                originalContent.forEach(item => track.appendChild(item));
-                
-                const baseUnitWidth = track.offsetWidth;
-                const marqueeWidth = marquee.offsetWidth;
-                if (baseUnitWidth === 0 || marqueeWidth === 0) {
-                    console.warn('Marquee setup failed: widths are zero.');
-                    return; 
-                }
-                let currentWidth = baseUnitWidth;
-                const fragment = document.createDocumentFragment();
-                while (currentWidth < marqueeWidth * 2) {
-                    originalContent.forEach(item => {
-                        fragment.appendChild(item.cloneNode(true));
-                    });
-                    currentWidth += baseUnitWidth;
-                }
-                track.appendChild(fragment);
-                const fullSetContent = Array.from(track.children);
-                const cloneFragment = document.createDocumentFragment();
-                fullSetContent.forEach(item => {
-                    cloneFragment.appendChild(item.cloneNode(true));
+            let currentWidth = baseUnitWidth;
+            const fragment = document.createDocumentFragment();
+            while (currentWidth < marqueeWidth * 2) {
+                originalContent.forEach(item => {
+                    fragment.appendChild(item.cloneNode(true));
                 });
-                track.appendChild(cloneFragment);
-                const duration = currentWidth / speed;
-                track.style.animationDuration = `${duration}s`;
-            };
-
-            setupMarquee();
-            let resizeTimer;
-            window.addEventListener("resize", () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(setupMarquee, 250);
+                currentWidth += baseUnitWidth;
+            }
+            track.appendChild(fragment);
+            const fullSetContent = Array.from(track.children);
+            const cloneFragment = document.createDocumentFragment();
+            fullSetContent.forEach(item => {
+                cloneFragment.appendChild(item.cloneNode(true));
             });
-        });
-    </script>
+            track.appendChild(cloneFragment);
+            const duration = currentWidth / speed;
+            track.style.animationDuration = `${duration}s`;
+        };
 
-    <script>
-        // Testimonials Carousel
-        (function() {
-            const track = document.querySelector('.testimonials-track');
-            let cards = document.querySelectorAll('.testimonial-card');
-            const prevBtn = document.querySelector('.testimonials-nav-btn-prev');
-            const nextBtn = document.querySelector('.testimonials-nav-btn-next');
+        setupMarquee();
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(setupMarquee, 250);
+        });
+    });
+</script>
+
+<script>
+    // Testimonials Carousel
+    (function() {
+        const track = document.querySelector('.testimonials-track');
+        let cards = document.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.testimonials-nav-btn-prev');
+        const nextBtn = document.querySelector('.testimonials-nav-btn-next');
+        
+        if (!track || !cards.length) return;
+        
+        const cardCount = cards.length;
+        
+        // Клонируем карточки для бесшовного цикла
+        for (let i = cardCount - 1; i >= 0; i--) {
+            const clone = cards[i].cloneNode(true);
+            track.insertBefore(clone, track.firstChild);
+        }
+        
+        for (let i = 0; i < cardCount; i++) {
+            const clone = cards[i].cloneNode(true);
+            track.appendChild(clone);
+        }
+        
+        cards = document.querySelectorAll('.testimonial-card');
+        
+        let currentIndex = cardCount;
+        let autoScrollInterval;
+        let isScrolling = false;
+        const gap = parseInt(getComputedStyle(track).gap) || 24;
+        
+        function getCardWidthWithGap() {
+            if (cards.length === 0) return 0;
+            const card = cards[0];
+            return card.offsetWidth + gap;
+        }
+        
+        function scrollToIndex(index, smooth = true) {
+            const cardWidthWithGap = getCardWidthWithGap();
+            const targetPosition = index * cardWidthWithGap;
             
-            if (!track || !cards.length) return;
+            track.style.transition = smooth ? 'transform 0.6s ease-in-out' : 'none';
+            track.style.transform = `translateX(-${targetPosition}px)`;
             
-            const cardCount = cards.length;
-            
-            // Клонируем ВСЕ карточки в начало и конец для полностью бесшовного цикла
-            // Клонируем все карточки в начало
-            for (let i = cardCount - 1; i >= 0; i--) {
-                const clone = cards[i].cloneNode(true);
-                track.insertBefore(clone, track.firstChild);
+            if (smooth) {
+                isScrolling = true;
             }
+        }
+        
+        setTimeout(() => {
+            scrollToIndex(currentIndex, false);
+        }, 100);
+        
+        track.addEventListener('transitionend', function() {
+            isScrolling = false;
             
-            // Клонируем все карточки в конец
-            for (let i = 0; i < cardCount; i++) {
-                const clone = cards[i].cloneNode(true);
-                track.appendChild(clone);
-            }
-            
-            // Обновляем список карточек после клонирования
-            cards = document.querySelectorAll('.testimonial-card');
-            
-            // Устанавливаем начальную позицию на первую оригинальную карточку (после клонов в начале)
-            let currentIndex = cardCount;
-            
-            // Инициализируем позицию без анимации
-            let autoScrollInterval;
-            let isScrolling = false;
-            const gap = parseInt(getComputedStyle(track).gap) || 24;
-            
-            // Функция для получения ширины карточки с отступом
-            function getCardWidthWithGap() {
-                if (cards.length === 0) return 0;
-                const card = cards[0];
-                return card.offsetWidth + gap;
-            }
-            
-            // Функция скролла
-            function scrollToIndex(index, smooth = true) {
-                const cardWidthWithGap = getCardWidthWithGap();
-                const targetPosition = index * cardWidthWithGap;
-                
-                track.style.transition = smooth ? 'transform 0.6s ease-in-out' : 'none';
-                track.style.transform = `translateX(-${targetPosition}px)`;
-                
-                if (smooth) {
-                    isScrolling = true;
-                }
-            }
-            
-            // Инициализация позиции
-            setTimeout(() => {
+            if (currentIndex >= cardCount * 2) {
+                currentIndex = cardCount;
                 scrollToIndex(currentIndex, false);
-            }, 100);
-            
-            // Обработчик завершения анимации для бесшовного перехода
-            track.addEventListener('transitionend', function() {
-                isScrolling = false;
-                
-                // Если дошли до клонов в конце, мгновенно перескакиваем на оригиналы в начале
-                if (currentIndex >= cardCount * 2) {
-                    currentIndex = cardCount;
-                    scrollToIndex(currentIndex, false);
-                }
-                // Если дошли до клонов в начале, мгновенно перескакиваем на оригиналы в конце
-                else if (currentIndex < cardCount) {
-                    currentIndex = cardCount * 2 - 1;
-                    scrollToIndex(currentIndex, false);
-                }
-            });
-            
-            // Переход к следующей карточке
-            function nextCard() {
-                if (isScrolling) return;
-                
-                currentIndex++;
-                scrollToIndex(currentIndex, true);
             }
-            
-            // Переход к предыдущей карточке
-            function prevCard() {
-                if (isScrolling) return;
-                
-                currentIndex--;
-                scrollToIndex(currentIndex, true);
+            else if (currentIndex < cardCount) {
+                currentIndex = cardCount * 2 - 1;
+                scrollToIndex(currentIndex, false);
             }
-            
-            // Обработчики кнопок
-            nextBtn.addEventListener('click', () => {
-                clearInterval(autoScrollInterval);
+        });
+        
+        function nextCard() {
+            if (isScrolling) return;
+            currentIndex++;
+            scrollToIndex(currentIndex, true);
+        }
+        
+        function prevCard() {
+            if (isScrolling) return;
+            currentIndex--;
+            scrollToIndex(currentIndex, true);
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            clearInterval(autoScrollInterval);
+            nextCard();
+            startAutoScroll();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            clearInterval(autoScrollInterval);
+            prevCard();
+            startAutoScroll();
+        });
+        
+        function startAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(() => {
                 nextCard();
-                startAutoScroll();
-            });
-            
-            prevBtn.addEventListener('click', () => {
+            }, 4000);
+        }
+        
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (currentIndex < cardCount) {
+                    currentIndex = cardCount;
+                } else if (currentIndex >= cardCount * 2) {
+                    currentIndex = cardCount;
+                }
+                scrollToIndex(currentIndex, false);
+            }, 250);
+        });
+        
+        setTimeout(() => {
+            startAutoScroll();
+        }, 500);
+        
+        const wrapper = document.querySelector('.testimonials-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', () => {
                 clearInterval(autoScrollInterval);
-                prevCard();
+            });
+            wrapper.addEventListener('mouseleave', () => {
                 startAutoScroll();
             });
-            
-            // Автоматический скролл
-            function startAutoScroll() {
-                clearInterval(autoScrollInterval);
-                autoScrollInterval = setInterval(() => {
-                    nextCard();
-                }, 4000); // 4 секунды между переходами
-            }
-            
-            // Обработка изменения размера окна
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    // Убеждаемся, что индекс в пределах оригинальных карточек
-                    if (currentIndex < cardCount) {
-                        currentIndex = cardCount;
-                    } else if (currentIndex >= cardCount * 2) {
-                        currentIndex = cardCount;
-                    }
-                    scrollToIndex(currentIndex, false);
-                }, 250);
-            });
-            
-            // Запуск автоматического скролла при загрузке (с небольшой задержкой для инициализации)
-            setTimeout(() => {
-                startAutoScroll();
-            }, 500);
-            
-            // Остановка при наведении мыши
-            const wrapper = document.querySelector('.testimonials-wrapper');
-            if (wrapper) {
-                wrapper.addEventListener('mouseenter', () => {
-                    clearInterval(autoScrollInterval);
-                });
-                wrapper.addEventListener('mouseleave', () => {
-                    startAutoScroll();
-                });
-            }
-        })();
-    </script>
+        }
+    })();
+</script>
 
-</body>
-</html>
+{% endblock %}

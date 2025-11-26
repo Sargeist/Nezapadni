@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ course.title }} – Nezapadni{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/display.css' %}">
+<link rel="stylesheet" href="{% static 'css/course_detail.css' %}">
+<script defer src="{% static 'js/course_detail.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<main class="course-detail-main">
+    <div class="container">
+        <div class="course-detail-content">
+
+            <!-- LEFT SIDE -->
+            <div class="course-detail-left">
+
+                <!-- COVER -->
+                <div class="course-detail-image">
+                    {% if course.image %}
+                        <img src="{{ course.image.url }}" class="course-detail-img">
+                    {% endif %}
+                </div>
+
+                <!-- META -->
+                <div class="course-detail-meta">
+                    <div class="course-detail-rating">
+                        <span>⭐ {{ avg_rating|floatformat:1 }}</span>
+                        <span>({{ review_count }} reviews)</span>
+                    </div>
+                </div>
+
+                <h1 class="course-detail-title">{{ course.title }}</h1>
+
+                <!-- AUTHOR -->
+                {% if course.instructor %}
+                <div class="course-detail-author-info">
+                    <div class="author-avatar">
+                        {% if course.instructor.photo %}
+                            <img src="{{ course.instructor.photo.url }}" class="author-img">
+                        {% endif %}
+                    </div>
+                    <div class="author-details">
+                        <span class="author-name">{{ course.instructor.name }}</span>
+                        <span class="course-date">{{ course.created_at|date:"d.m.Y" }}</span>
+                        <span class="course-students">{{ course.instructor.students_count }} students</span>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- TABS -->
+                <div class="course-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="curriculum">Curriculum</button>
+                    <button class="tab-btn" data-tab="instructors">Instructor</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+
+                <!-- TAB CONTENT -->
+                <div class="tab-content">
+
+                    <!-- OVERVIEW -->
+                    <div class="tab-panel active" id="overview">
+                        <div class="course-description-card">
+                            <h3>Course Description</h3>
+                            <p>{{ course.description }}</p>
+
+                            {% if learning_points %}
+                            <h3>What you'll learn</h3>
+                            <ul class="learn-list">
+                                {% for p in learning_points %}
+                                    <li>{{ p }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- CURRICULUM -->
+                    <div class="tab-panel" id="curriculum">
+                        <div class="course-description-card">
+                            <h3>Course Curriculum</h3>
+
+                            {% if not owns %}
+                                <div class="locked-big-overlay">
+                                    <p>This content is available only after purchasing the course.</p>
+                                    <a href="{% url 'courses:purchase' course.slug %}">
+                                        Unlock Course →
+                                    </a>
+                                </div>
+
+                                <div class="curriculum-section">
+                                    {% for category in categories %}
+                                    <div class="curriculum-item">
+                                        <div class="curriculum-header">
+                                            <span class="curriculum-title">{{ category.title }}</span>
+                                        </div>
+                                        <div class="curriculum-content">
+                                            {% for lesson in category.lessons.all %}
+                                            <div class="lesson-item locked">
+                                                <span>{{ lesson.title }}</span>
+                                                <span class="locked-overlay-icon">🔒</span>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                            {% else %}
+
+                                <div class="curriculum-section">
+                                    {% for category in categories %}
+                                    <div class="curriculum-item">
+                                        <div class="curriculum-header">
+                                            <span class="curriculum-title">{{ category.title }}</span>
+                                        </div>
+
+                                        <div class="curriculum-content">
+                                            {% for lesson in category.lessons.all %}
+                                            <div class="lesson-item">
+                                                <div class="lesson-info">
+                                                    <span class="lesson-title">{{ lesson.title }}</span>
+                                                    {% if lesson.duration %}
+                                                        <span class="lesson-duration">{{ lesson.duration }} min</span>
+                                                    {% endif %}
+                                                </div>
+
+                                                {% if lesson.video %}
+                                                <div class="video-player">
+                                                    <video controls>
+                                                        <source src="{{ lesson.video.url }}">
+                                                    </video>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- INSTRUCTOR -->
+                    <div class="tab-panel" id="instructors">
+                        {% include "courses/instructor_card.html" %}
+                    </div>
+
+                    <!-- REVIEWS -->
+                    <div class="tab-panel" id="reviews">
+                        <div class="course-description-card">
+                            <h3>Reviews</h3>
+
+                            {% for r in reviews %}
+                            <div class="review-item">
+                                <div class="review-avatar"><div class="circle-avatar"></div></div>
+
+                                <div class="review-content">
+                                    <div class="review-header">
+                                        <span class="reviewer-name">{{ r.reviewer_name }}</span>
+                                        <span class="review-date">{{ r.created_at|date:"F j, Y" }}</span>
+                                    </div>
+
+                                    <p class="review-text">{{ r.text }}</p>
+                                    <div class="review-rating">⭐ {{ r.rating }}</div>
+                                </div>
+                            </div>
+                            {% empty %}
+                                <p>No reviews yet.</p>
+                            {% endfor %}
+
+                            {% if user.is_authenticated and owns %}
+                                <div class="write-review">
+                                    <form method="POST" action="{% url 'courses:add_review' course.slug %}" class="review-form">
+                                        {% csrf_token %}
+
+                                        <div class="star-rating" id="ratingStars">
+                                            <span data-value="1">★</span>
+                                            <span data-value="2">★</span>
+                                            <span data-value="3">★</span>
+                                            <span data-value="4">★</span>
+                                            <span data-value="5">★</span>
+                                            <input type="hidden" name="rating" id="ratingValue" value="0">
+                                        </div>
+
+                                        <textarea name="text" placeholder="Write your review..." required></textarea>
+
+                                        <button class="submit-review-btn">Submit Review</button>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <p class="login-message">
+                                    <a href="{% url 'login' %}">Sign in</a> and buy this course to leave a review.
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT PRICE SIDEBAR -->
+            <div class="course-detail-right">
+                <div class="pricing-card">
+                    <h2 class="pricing-title">{{ course.title }}</h2>
+
+                    <ul class="pricing-features">
+                        <li>Lifetime access</li>
+                        <li>Certificate of Completion</li>
+                        <li>High-quality content</li>
+                    </ul>
+
+                    <div class="pricing-price">${{ course.price }}</div>
+
+                    {% if owns %}
+                        <div class="owned-box">You already own this course ✔</div>
+                    {% else %}
+                        <a href="{% url 'courses:purchase' course.slug %}" class="pricing-btn">
+                            Buy Course →
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

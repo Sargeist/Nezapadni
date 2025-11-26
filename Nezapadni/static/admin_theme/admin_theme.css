@@ -1,0 +1,165 @@
+/* ============================================
+   PREMIUM ADMIN THEME — NEZAPADNI EDITION 💜
+   ============================================ */
+
+/* MAIN BACKGROUND */
+body, .dashboard {
+    background: #f3f1fa !important;
+}
+
+
+/* TOP BAR */
+#header {
+    background: #3b246b !important;
+    color: #fff !important;
+    padding: 20px;
+    font-size: 18px;
+}
+
+#header a {
+    color: #fff !important;
+}
+
+#header a:hover {
+    opacity: 0.8;
+}
+
+
+/* SIDEBAR */
+#nav-sidebar {
+    background: #2b1a4d !important;
+    padding-top: 20px;
+}
+
+#nav-sidebar .nav-item {
+    border-radius: 8px;
+}
+
+#nav-sidebar .nav-item a {
+    color: #e6e3f5 !important;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+#nav-sidebar .nav-item a:hover {
+    background: #443173 !important;
+}
+
+#nav-sidebar .current-app a,
+#nav-sidebar .current-model a {
+    background: #6d52c0 !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+
+/* CONTENT WRAPPER */
+#content {
+    padding: 40px;
+}
+
+
+/* CARDS (CHANGEFORM BACKGROUND) */
+.module, .inline-group {
+    background: white !important;
+    border-radius: 14px !important;
+    padding: 25px !important;
+
+    border: 1px solid #e1dff0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+
+/* TABLES */
+.change-list table {
+    background: white !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.change-list thead th {
+    background: #ece8ff !important;
+    color: #2a1f4c !important;
+    font-weight: 700;
+}
+
+.change-list tbody tr:hover {
+    background: #f1ecff !important;
+}
+
+
+/* BUTTONS */
+.button, input[type=submit], .submit-row input {
+    background: #3b246b !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    padding: 10px 18px !important;
+    border: none !important;
+    transition: 0.25s !important;
+}
+
+.button:hover, input[type=submit]:hover, .submit-row input:hover {
+    background: #4f2e98 !important;
+}
+
+
+/* BADGES */
+.field-rating {
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.field-rating:contains("5") {
+    background: #34c759;
+}
+
+.field-rating:contains("4") {
+    background: #a3d85f;
+}
+
+.field-rating:contains("3") {
+    background: #ffcc00;
+}
+
+.field-rating:contains("2") {
+    background: #ff9500;
+}
+
+.field-rating:contains("1") {
+    background: #ff3b30;
+}
+
+
+/* SELECT + INPUT */
+select, input, textarea {
+    border-radius: 8px !important;
+    border: 1px solid #cfc6ed !important;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: #7c5dff !important;
+    box-shadow: 0 0 0 3px rgba(125, 95, 255, 0.3) !important;
+}
+
+
+/* LOGIN PAGE */
+body.login {
+    background: #3b246b !important;
+}
+
+.login #header {
+    display: none;
+}
+
+.login .form-row input {
+    border-radius: 10px !important;
+}
+
+.login .submit-row input {
+    width: 100%;
+    border-radius: 12px !important;
+}

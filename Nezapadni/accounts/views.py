@@ -3,8 +3,16 @@ from django.contrib.auth import get_user_model, authenticate, login
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
+from django.contrib.auth import logout
 
 User = get_user_model()
+
+
+@csrf_exempt
+def logout_view(request):
+    logout(request)
+    return redirect("home")
+
 
 
 @csrf_exempt

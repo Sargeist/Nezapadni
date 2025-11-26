@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Bitter", serif;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* Фон и выравнивание как у signup */
@@ -53,11 +53,7 @@ body {
 /* Инпуты (по стилю как в signup) */
 .inputbox input {
     width: 100%;
-    padding: 14px;
-    font-size: 15px;
-    color: #222;
-    background: #f8f8f8;
-    border: 1px solid #ddd;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 14px;
@@ -112,8 +108,9 @@ body {
 
 /* Кнопка отправки — 1 в 1 стиль, как в signup */
 button[type="submit"] {
-    background: #cfff4d;
-    color: #000000;
+    background-color: #00a67e;
+    color: #ffffff;
+    font-weight: bold;
     border: none;
     border-radius: 8px;
     padding: 12px;
@@ -180,8 +177,7 @@ button[type="submit"]:active {
     border-radius: 14px;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
     padding: 25px 20px;
-    animation: fadeInScale 0.3s ease;
-    font-family: "Bitter", serif;
+    animation: fadeInScale 0.25s ease;
 }
 
 /* заголовок окна */

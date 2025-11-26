@@ -1,63 +1,96 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Nezapadni — Learn Anytime, Grow Anywhere{% endblock %}</title>
+    <title>{% block title %}Nezapadni{% endblock %}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" href="{% static 'img/nezapadni_single_green.png' %}">
+
+    <style>
+        body { margin:0; font-family:"Bitter", serif; }
+        .site-header { position:relative; z-index:5; padding:20px 0; }
+        .container { width:min(1200px,92%); margin:0 auto; }
+        .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+        .brand { display:flex; align-items:center; gap:10px; }
+        .logo-img { width:30px; height:30px; display:block; }
+        .logo-text { font-weight:700; letter-spacing:0.2px; color:#c8d947; }
+        .user-greet { margin-right:12px; font-weight:600; }
+
+        .btn-small {
+            padding:8px 14px;
+            background:#c8d947;
+            border-radius:6px;
+            color:#000;
+            font-weight:600;
+            text-decoration:none;
+        }
+
+        .logout-link {
+            border:none;
+            background:#ef4444;
+            color:white;
+            padding:8px 14px;
+            border-radius:6px;
+            cursor:pointer;
+            font-weight:600;
+        }
+    </style>
+
+    {% block head_extra %}{% endblock %}
 </head>
 <body>
 
-{# 🔔 Блок сообщений #}
-{% if messages %}
-  <div class="flash-messages">
-    {% for message in messages %}
-      <div class="flash-message{% if message.tags %} {{ message.tags }}{% endif %}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
-
 <header class="site-header">
     <div class="container nav">
+
+        <!-- Logo -->
         <div class="brand">
             <a href="{% url 'home' %}" class="brand-link">
-                <img class="logo-img" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo" width="30" height="30">
+                <img class="logo-img" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo">
                 <span class="logo-text">Nezapadni</span>
             </a>
         </div>
 
+        <!-- Navigation -->
         <nav class="main-nav">
-            <a href="{% url 'home' %}" class="nav-link{% if request.path == '/' %} is-active{% endif %}">Home</a>
-            <a href="{% url 'story' %}" class="nav-link">Story</a>
-            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-            <a href="{% url 'vision' %}" class="nav-link">Vision</a>
-            <a href="{% url 'courses' %}" class="nav-link">Courses</a>
+            <a href="{% url 'home' %}" class="nav-link{% block nav_home_active %}{% endblock %}">Home</a>
+            <a href="{% url 'story' %}" class="nav-link{% block nav_story_active %}{% endblock %}">Story</a>
+            <a href="{% url 'contact' %}" class="nav-link{% block nav_contact_active %}{% endblock %}">Contact</a>
+            <a href="{% url 'vision' %}" class="nav-link{% block nav_vision_active %}{% endblock %}">Vision</a>
+            <a href="{% url 'courses:list' %}" class="nav-link{% block nav_courses_active %}{% endblock %}">Courses</a>
         </nav>
 
+        <!-- Sign In / User Menu -->
         <div class="nav-cta">
-            <a href="{% url 'sign_up' %}" class="btn btn-small">Sign Up</a>
+            {% if user.is_authenticated %}
+
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-link">Log Out</button>
+            </form>
+
+            {% else %}
+            <a href="{% url 'login' %}" class="btn-small">Sign In</a>
+            {% endif %}
         </div>
+
     </div>
 </header>
 
 <main>
-    {% block content %}
-    {% endblock %}
+    {% block content %}{% endblock %}
 </main>
 
 <footer class="site-footer">
     <div class="container footer-container">
         <div class="footer-brand">
-            <img class="footer-logo-img" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo">
+            <img class="footer-logo-img" src="{% static 'img/nezapadni_single_green.png' %}" alt="logo">
             <span class="footer-logo-text">Nezapadni</span>
         </div>
 
@@ -66,6 +99,7 @@
                 <h3 class="footer-title">Quick Link</h3>
                 <ul class="footer-links">
                     <li><a href="{% url 'home' %}" class="footer-link">Home</a></li>
+                    <li><a href="{% url 'story' %}" class="footer-link">About Us</a></li>
                     <li><a href="{% url 'story' %}" class="footer-link">Story</a></li>
                     <li><a href="{% url 'contact' %}" class="footer-link">Contact</a></li>
                 </ul>
@@ -74,9 +108,9 @@
             <div class="footer-column">
                 <h3 class="footer-title">Contact Information</h3>
                 <ul class="footer-contacts">
-                    <li>📞 +123 456 7890</li>
-                    <li>📧 sales@nezapadni.com</li>
-                    <li>📍 123 Nezapadni, Luxe City, 45678</li>
+                    <li class="footer-contact-item">+123 456 7890</li>
+                    <li class="footer-contact-item">sales@nezapadni.sk</li>
+                    <li class="footer-contact-item">123 Nezapadni, Luxe City</li>
                 </ul>
             </div>
 
@@ -90,33 +124,29 @@
         </div>
     </div>
 
+    {% if not user.is_authenticated %}
+        <a href="/login/" class="sign-in-btn">Sign In</a>
+    {% endif %}
+
     <div class="footer-bottom">
         <div class="container">
-            <p>© 2026 Nezapadni. All rights reserved.</p>
+            <p class="footer-copy">© 2026 Nezapadni. All rights reserved.</p>
         </div>
     </div>
 </footer>
 
-<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">⬆</button>
+<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">↑</button>
 
 <script>
-const scrollToTopBtn = document.getElementById('scrollToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) scrollToTopBtn.classList.add('show');
-    else scrollToTopBtn.classList.remove('show');
-});
-scrollToTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-
-// 🔔 авто-скрытие флеш-сообщений
-document.addEventListener('DOMContentLoaded', () => {
-    const flashes = document.querySelectorAll('.flash-message');
-    if (!flashes.length) return;
-
-    setTimeout(() => {
-        flashes.forEach(f => f.classList.add('flash-hide'));
-    }, 3000); // 3 секунды показываем
-});
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+        scrollToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>
 
+{% block scripts_extra %}{% endblock %}
 </body>
 </html>

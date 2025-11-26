@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Courses - Nezapadni{% endblock %}
+
+{% block nav_courses_active %} is-active{% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-courses">
+    <div class="hero-background-skew"></div>
+    <div class="container hero-courses-content">
+        <h1 class="hero-courses-title">Explore Our Courses For Self Development</h1>
+        <p class="hero-courses-description">
+            Access expert-led courses designed to help you develop new skills, advance your career,
+            and achieve your goals—all at your own pace.
+        </p>
+    </div>
+
+    <div class="marquee" aria-label="Nezapadni ticker">
+        <div class="marquee-track">
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+            <span class="marq-item">
+                <img class="marq-logo" src="{% static 'img/nezapadni_single_green.png' %}" alt="Nezapadni logo"> Nezapadni
+            </span>
+            <span class="marq-sep">✷</span>
+        </div>
+    </div>
+</section>
+
+<section class="courses-section">
+    <div class="container">
+        <div class="courses-control-bar">
+            <div class="courses-results">
+                <span class="results-text">
+                    {% if courses %}
+                        Showing {{ courses|length }} Courses
+                    {% else %}
+                        No courses available yet
+                    {% endif %}
+                </span>
+            </div>
+            <div class="courses-controls">
+                <div class="sort-control">
+                    <label for="sort-select" class="sort-label">Sort By:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="courses-list">
+            {% for course in courses %}
+                <div class="course-item"
+                     data-rating="{{ course.rating|default:'4.8' }}"
+                     data-price="{{ course.price|default:'19' }}"
+                     data-popularity="{{ course.popularity|default:'80' }}"
+                     data-newest="{{ forloop.counter }}">
+                    <a href="{% url 'courses:detail' course.slug %}" class="course-link">
+                        <div class="course-image">
+                            {% if course.image %}
+                                <img src="{{ course.image.url }}"
+                                     alt="{{ course.title }}"
+                                     class="course-img">
+                            {% else %}
+                                <img src="{% static 'img/Image.png' %}"
+                                     alt="{{ course.title }}"
+                                     class="course-img">
+                            {% endif %}
+                        </div>
+                        <div class="course-details">
+                            <div class="course-pricing">
+                                {% if course.old_price %}
+                                    <span class="course-price-original">${{ course.old_price }}</span>
+                                {% endif %}
+                                {% if course.price %}
+                                    <span class="course-price-current">${{ course.price }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="course-meta">
+                                <span class="course-category">
+                                    {{ course.category|default:"Self Development" }}
+                                </span>
+                                <div class="course-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon
+                                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                                        />
+                                    </svg>
+                                    <span>({{ course.rating|default:"4.8" }} Reviews)</span>
+                                </div>
+                            </div>
+                            <h3 class="course-title">{{ course.title }}</h3>
+                            <p class="course-author">
+                                {% if course.author %}
+                                    By {{ course.author }}
+                                {% endif %}
+                            </p>
+                            <p class="course-description">
+                                {{ course.description|default:"Course description will be added soon."|truncatechars:140 }}
+                            </p>
+                            <div class="course-enroll-btn">
+                                View Details
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7"
+                                          stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% empty %}
+                <p>No courses yet. Check back later!</p>
+            {% endfor %}
+        </div>
+
+        {# заглушка пагинации, если понадобится — можно оживить скриптом #}
+        <div class="courses-pagination">
+            <div class="pagination-numbers">
+                <button class="pagination-number active" data-page="1">1</button>
+                <button class="pagination-number" data-page="2">2</button>
+                <button class="pagination-number" data-page="3">3</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts_extra %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const marquee = document.querySelector('.marquee');
+        const track = document.querySelector('.marquee-track');
+        if (!marquee || !track) return;
+
+        const speed = 150;
+
+        const setupMarquee = () => {
+            const originalContent = Array.from(track.children);
+            if (originalContent.length === 0) return;
+
+            track.innerHTML = '';
+            originalContent.forEach(item => track.appendChild(item));
+
+            const baseUnitWidth = track.offsetWidth;
+            const marqueeWidth = marquee.offsetWidth;
+            if (baseUnitWidth === 0 || marqueeWidth === 0) return;
+
+            let currentWidth = baseUnitWidth;
+            const fragment = document.createDocumentFragment();
+
+            while (currentWidth < marqueeWidth * 2) {
+                originalContent.forEach(item => {
+                    fragment.appendChild(item.cloneNode(true));
+                });
+                currentWidth += baseUnitWidth;
+            }
+
+            track.appendChild(fragment);
+
+            const fullSetContent = Array.from(track.children);
+            const cloneFragment = document.createDocumentFragment();
+            fullSetContent.forEach(item => {
+                cloneFragment.appendChild(item.cloneNode(true));
+            });
+            track.appendChild(cloneFragment);
+
+            const duration = currentWidth / speed;
+            track.style.animationDuration = `${duration}s`;
+        };
+
+        setupMarquee();
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(setupMarquee, 250);
+        });
+    });
+</script>
+{% endblock %}

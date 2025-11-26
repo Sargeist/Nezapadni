@@ -1,0 +1,67 @@
+<div class="instructor-main-card">
+    <div class="instructor-header">
+
+        <div class="instructor-avatar-large">
+            {% if course.instructor.photo %}
+            <img src="{{ course.instructor.photo.url }}" class="instructor-img-large">
+            {% endif %}
+        </div>
+
+        <div class="instructor-info-large">
+            <h3>{{ course.instructor.name }}</h3>
+            <p class="instructor-title">{{ course.instructor.title }}</p>
+
+            <div class="instructor-stats">
+                <div class="stat-item">
+                    <span class="stat-number">{{ course.instructor.experience_years }}+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{{ course.instructor.courses_count }}</span>
+                    <span class="stat-label">Courses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{{ course.instructor.rating }}</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructor-bio-large">
+        <p>{{ course.instructor.bio }}</p>
+
+        {% if course.instructor.skills %}
+        <div class="expertise-tags">
+            {% for skill in course.instructor.skills_list %}
+                <span class="expertise-tag">{{ skill }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if course.instructor.facebook or course.instructor.twitter or course.instructor.instagram or course.instructor.linkedin %}
+        <div class="instructor-social">
+            <h4>Social:</h4>
+            <div class="social-links">
+
+                {% if course.instructor.facebook %}
+                <a href="{{ course.instructor.facebook }}" class="social-link">FB</a>
+                {% endif %}
+
+                {% if course.instructor.twitter %}
+                <a href="{{ course.instructor.twitter }}" class="social-link">X</a>
+                {% endif %}
+
+                {% if course.instructor.instagram %}
+                <a href="{{ course.instructor.instagram }}" class="social-link">IG</a>
+                {% endif %}
+
+                {% if course.instructor.linkedin %}
+                <a href="{{ course.instructor.linkedin }}" class="social-link">in</a>
+                {% endif %}
+
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

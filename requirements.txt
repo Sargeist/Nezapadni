@@ -1,0 +1,10 @@
+Django==5.2.8
+pillow
+django-allauth
+django-crispy-forms
+crispy-bootstrap5
+stripe
+requests
+python-dotenv
+django-jazzmin
+django-sendgrid-v5
