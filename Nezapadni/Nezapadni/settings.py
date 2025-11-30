@@ -5,25 +5,22 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # -----------------------------
-# BASE / SECURITY
+# SECURITY
 # -----------------------------
 
 SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-default-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    ".railway.app",
-    "nezapadni.sk",
-    "www.nezapadni.sk",
+    "*"
 ]
-
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.railway.app",
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
+    "https://nezapadni.sk",
+    "https://www.nezapadni.sk",
+    "http://127.0.0.1",
+    "http://localhost",
 ]
 
 # -----------------------------
@@ -38,13 +35,21 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # твоё приложение
     "accounts",
     "main",
     "courses",
+
+    # crispy / allauth — если появятся
+    # "django_crispy_forms",
+    # "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # <-- обязательно для Railway!
+
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -54,6 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "Nezapadni.urls"
+
+# -----------------------------
+# TEMPLATES
+# -----------------------------
 
 TEMPLATES = [
     {
@@ -70,6 +79,7 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = "Nezapadni.wsgi.application"
 ASGI_APPLICATION = "Nezapadni.asgi.application"
 
@@ -77,11 +87,14 @@ ASGI_APPLICATION = "Nezapadni.asgi.application"
 # DATABASES
 # -----------------------------
 
+# Если Railway создаёт DATABASE_URL — используем PostgreSQL.
+# Если нет — fallback на SQLite.
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        conn_health_checks=True,
+        ssl_require=False,
     )
 }
 
@@ -101,10 +114,9 @@ AUTHENTICATION_BACKENDS = [
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
