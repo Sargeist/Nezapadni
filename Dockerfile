@@ -15,12 +15,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
 
-# ---- Run migrations ----
-RUN python manage.py migrate --noinput
-
 # ---- Collect static files ----
 RUN python manage.py collectstatic --noinput
 
+# ---- Add entrypoint ----
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 8000
 
-CMD gunicorn Nezapadni.wsgi:application --bind 0.0.0.0:$PORT
+CMD ["/entrypoint.sh"]
