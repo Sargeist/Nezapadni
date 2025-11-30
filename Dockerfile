@@ -1,10 +1,9 @@
 # ---- Base image ----
 FROM python:3.12-slim
 
-# ---- Prevent Python from buffering stdout/stderr ----
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
 
-# ---- Set work directory ----
 WORKDIR /app
 
 # ---- Install system dependencies ----
@@ -14,19 +13,15 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # ---- Install Python dependencies ----
-COPY requirements.txt /app/
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # ---- Copy project ----
-COPY . /app/
+COPY . .
 
-# ---- Collect static files ----
+# ---- Collect static ----
 RUN python manage.py collectstatic --noinput
 
-# ---- Expose port for Railway ----
 EXPOSE 8000
 
-# ---- Run Gunicorn ----
-CMD gunicorn Nezapadni.wsgi:application --bind 0.0.0.0:$PORT
-
-
+CMD ["gunicorn", "Nezapadni.wsgi:application", "--bind", "0.0.0.0:8000"]
