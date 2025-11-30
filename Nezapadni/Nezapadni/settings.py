@@ -197,13 +197,13 @@ STATICFILES_DIRS = [
 # STRIPE SETTINGS
 # ================================
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
-STRIPE_PUBLIC_KEY =  ""
+STRIPE_PUBLIC_KEY =  "pk_test_51S9nkNCRcUQOATpcYLKto83dtQhb4FcJxdKJgiE0CDaMGvNJXCkMmX75Id4v3Y4HKv9BAg4OVfhzmDTsVihmbC6R00CKsCvvAu"
 
 # ================================
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 DEFAULT_FROM_EMAIL = "no-reply@nezapadni.sk"
