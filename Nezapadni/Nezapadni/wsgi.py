@@ -15,6 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.append(str(BASE_DIR))
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Nezapadni.Nezapadni.settings")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Nezapadni.settings')
+
 
 application = get_wsgi_application()
