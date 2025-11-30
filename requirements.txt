@@ -8,3 +8,4 @@ requests
 python-dotenv
 django-jazzmin
 django-sendgrid-v5
+gunicorn
